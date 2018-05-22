@@ -2,9 +2,9 @@ import React from "react";
 import styled from "styled-components";
 
 // images
-import calendar from "./calendar.png";
-import location from "./location.png";
-import nameTag from "./name-tag.png";
+import calendar from "../../icons/calendar.png";
+import location from "../../icons/location.png";
+import nameTag from "../../icons/name-tag.png";
 
 const Job = props => (
   <Container>
@@ -30,16 +30,20 @@ const Job = props => (
 const Detail = styled.div`
   display: flex;
   align-items: center;
+  color: #696969;
 `;
 
 const Icon = styled.img`
   margin-right: 0.6rem;
+  width: 15px;
+  height: 15px;
+  object-fit: contain;
 `;
 
 const Company = styled.div`
   font-weight: bold;
-  font-size: 1.3rem;
-  margin-bottom: 0.4rem;
+  font-size: 1.2rem;
+  margin-bottom: 0.2rem;
 `;
 
 const Meta = styled.div``;

@@ -1,12 +1,12 @@
 import React from "react";
 import Job from "../components/resume/job";
 import styled from "styled-components";
-import iphone from "../components/resume/iphone.png";
-import email from "../components/resume/email.png";
-import heart from "../components/resume/heart.png";
-import github from "./github.png";
-import gradCap from "./grad-cap.png";
-import work from "./work.png";
+import iphone from "../icons/iphone.png";
+import email from "../icons/email.png";
+import heart from "../icons/heart.png";
+import github from "../icons/github.png";
+import gradCap from "../icons/grad-cap.png";
+import work from "../icons/work.png";
 
 const ResumePage = () => (
   <Page>
@@ -33,7 +33,7 @@ const ResumePage = () => (
     <Section>
       <SectionTitle>
         <TitleIcon src={work} alt="hand holding wrench" />
-        Experience
+        experience
       </SectionTitle>
       <Job
         company="EagleDream Technologies"
@@ -75,7 +75,7 @@ const ResumePage = () => (
     <Section>
       <SectionTitle>
         <TitleIcon src={gradCap} alt="graduation cap" />
-        Education
+        education
       </SectionTitle>
       <SectionBody>
         <div>
@@ -90,7 +90,7 @@ const ResumePage = () => (
     <Section>
       <SectionTitle>
         <TitleIcon src={github} alt="github" />
-        Projects
+        projects
       </SectionTitle>
       <SectionBody>
         See what I am working on at{" "}
@@ -101,35 +101,49 @@ const ResumePage = () => (
 );
 
 const Section = styled.section`
-  margin-top: 2rem;
+  margin-top: 0.2in;
 `;
 
 const SectionBody = styled.div`
   margin-top: 0.6rem;
+
+  a {
+    color: #007faa;
+    font-weight: 500;
+  }
 `;
 
 const ContactOption = styled.div`
   display: flex;
   align-items: center;
+
+  a {
+    color: #444;
+  }
 `;
 
 const Tech = styled.span`
-  color: #009688;
+  color: #007faa;
+  font-weight: 500;
 `;
 
 const SectionTitle = styled.div`
-  font-size: 1.6rem;
-  color: #999;
+  font-size: 1.8rem;
+  color: #336e7b;
   display: flex;
   align-items: center;
+  font-variant: small-caps;
+  letter-spacing: 0.1rem;
+  font-weight: bold;
 `;
 
 const Name = styled.div`
   font-size: 3.2rem;
   font-weight: 500;
+  font-family: "Bitter";
 
   span {
-    color: #607d8b;
+    color: #007faa;
   }
 `;
 
@@ -137,12 +151,15 @@ const Contact = styled.div``;
 
 const Icon = styled.img`
   margin-right: 0.6rem;
+  width: 15px;
+  height: 15px;
+  object-fit: contain;
 `;
 
 const TitleIcon = styled.img`
   margin-right: 0.6rem;
-  width: 30px;
-  height: 30px;
+  width: 32px;
+  height: 32px;
   object-fit: contain;
 `;
 
@@ -150,6 +167,8 @@ const Header = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  border-bottom: 1px solid #e1f3e1;
+  padding-bottom: 0.2in;
 `;
 
 const Page = styled.div`
@@ -157,9 +176,9 @@ const Page = styled.div`
   margin: 0.2in;
   line-height: 1.425;
   letter-spacing: 0.8px;
+  color: #444;
 
   a {
-    color: #444;
     text-decoration: none;
   }
 `;
