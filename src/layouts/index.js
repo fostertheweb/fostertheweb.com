@@ -11,11 +11,11 @@ const Layout = ({ children, data }) => (
     <Helmet
       title={data.site.siteMetadata.title}
       meta={[
-        { name: "description", content: "Sample" },
-        { name: "keywords", content: "sample, something" },
+        { name: "description", content: "Jonathan Foster, Software Engineer." },
+        { name: "keywords", content: "javascript" },
       ]}
     />
-    <Header siteTitle={data.site.siteMetadata.title} />
+    <Header />
     <div>{children()}</div>
   </div>
 );
