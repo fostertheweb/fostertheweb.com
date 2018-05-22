@@ -7683,9 +7683,9 @@ type-of@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/type-of/-/type-of-2.0.1.tgz#e72a1741896568e9f628378d816d6912f7f23972"
 
-typeface-bitter@^0.0.54:
+typeface-sanchez@^0.0.54:
   version "0.0.54"
-  resolved "https://registry.yarnpkg.com/typeface-bitter/-/typeface-bitter-0.0.54.tgz#b932661d3ffa0f1cd2ee764e9ddb8738eaf1c437"
+  resolved "https://registry.yarnpkg.com/typeface-sanchez/-/typeface-sanchez-0.0.54.tgz#b735cbbf122f7541885dc35ddcd04ae75db6197a"
 
 ua-parser-js@^0.7.9:
   version "0.7.18"

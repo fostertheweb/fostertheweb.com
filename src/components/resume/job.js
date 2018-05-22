@@ -31,6 +31,8 @@ const Detail = styled.div`
   display: flex;
   align-items: center;
   color: #696969;
+  font-size: 15px;
+  line-height: 25px;
 `;
 
 const Icon = styled.img`

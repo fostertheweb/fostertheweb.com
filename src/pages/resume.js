@@ -140,7 +140,7 @@ const SectionTitle = styled.div`
 const Name = styled.div`
   font-size: 3.2rem;
   font-weight: 500;
-  font-family: "Bitter";
+  font-family: "Sanchez";
 
   span {
     color: #007faa;

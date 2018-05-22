@@ -4,7 +4,7 @@ import Helmet from "react-helmet";
 
 import Header from "../components/header";
 import "./index.css";
-import "typeface-bitter";
+import "typeface-sanchez";
 import "@fostertheweb/typeface-oakes";
 
 const Layout = ({ children, data }) => (
