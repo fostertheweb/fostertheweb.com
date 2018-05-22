@@ -167,7 +167,7 @@ const Header = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid #e1f3e1;
+  border-bottom: 2px solid #eee;
   padding-bottom: 0.2in;
 `;
 

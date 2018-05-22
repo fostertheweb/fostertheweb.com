@@ -44,7 +44,7 @@ const Icon = styled.img`
 
 const Company = styled.div`
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 20px;
   margin-bottom: 0.2rem;
 `;
 
