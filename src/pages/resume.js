@@ -172,8 +172,12 @@ const Header = styled.header`
 `;
 
 const Page = styled.div`
+  background: #fff;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+  padding: 0.5in;
   width: 8.5in;
-  margin: 0.2in;
+  margin: 2rem auto;
+  /* margin: 0.2in; */
   line-height: 1.425;
   letter-spacing: 0.8px;
   color: #444;
