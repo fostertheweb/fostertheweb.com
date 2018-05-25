@@ -2,22 +2,34 @@ import React from "react";
 import Link from "gatsby-link";
 import styled from "styled-components";
 import avatar from "./avatar.png";
+import github from "../icons/github.png";
 
 const Header = () => (
-  <Container>
-    <Avatar
-      src={avatar}
-      alt="illustration of me happily coding on my ThinkPad"
-    />
-    <Me>
-      <Name>Jonathan Foster</Name>
-      <Phrase>i'm still enjoying javascript</Phrase>
-    </Me>
+  <div>
+    <Row>
+      <Avatar
+        src={avatar}
+        alt="illustration of Jonathan happily coding on his ThinkPad"
+      />
+      <Me>
+        <Name>Jonathan Foster</Name>
+        <Phrase>enjoying javascript</Phrase>
+      </Me>
+    </Row>
     <Nav>
-      <Link to="/resume/">Resume</Link>
+      <a href="https://github.com/fostertheweb">
+        <Icon src={github} alt="github logo" />
+        GitHub
+      </a>
     </Nav>
-  </Container>
+  </div>
 );
+
+const Icon = styled.img`
+  margin: 0 0.2rem;
+  width: 32px;
+  height: 32px;
+`;
 
 const Phrase = styled.div`
   color: #939393;
@@ -29,41 +41,45 @@ const Me = styled.div`
 `;
 
 const Name = styled.h1`
+  font-family: "Sanchez";
   font-weight: normal;
-  color: #708090;
+  color: #0077aa;
   font-size: 2rem;
   margin: 0;
-
-  span {
-    transition: opacity linear 400ms;
-    color: green;
-    opacity: 0;
-
-    &;hover {
-      opacity: 1;
-    }
-  }
 `;
 
 const Nav = styled.nav`
   margin-left: 1rem;
 
   a {
+    font-weight: 500;
+    color: #444;
     text-decoration: none;
-    color: #6c7a89;
-    transition: color linear 400ms;
+    transition: border-color linear 300ms;
+    border: 2px solid #ddd;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    width: 6rem;
+    line-height: 36px;
 
     &:hover {
-      color: #3498db;
+      border-color: #3498db;
     }
   }
 `;
 
-const Container = styled.div`
+const Row = styled.div`
   display: flex;
   align-items: center;
   padding: 1rem;
   height: 6rem;
+
+  @media print {
+    & {
+      display: none;
+    }
+  }
 `;
 
 const Avatar = styled.img`

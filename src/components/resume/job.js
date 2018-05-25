@@ -1,13 +1,31 @@
 import React from "react";
 import styled from "styled-components";
+import Highlighter from "react-highlight-words";
 
 // images
 import calendar from "../../icons/calendar.png";
 import location from "../../icons/location.png";
 import nameTag from "../../icons/name-tag.png";
 
+const BUZZWORDS = [
+  "npm",
+  "webpack",
+  "React",
+  "Redux",
+  "AngularJS",
+  "Node.js",
+  "Express",
+  "Bootstrap",
+  "AWS",
+  "UX",
+  "Protractor",
+  "Karma",
+  "Jasmine",
+  "MongoDB",
+];
+
 const Job = props => (
-  <Container>
+  <Container first={props.first}>
     <Meta>
       <Company>{props.company}</Company>
       <Detail>
@@ -23,7 +41,19 @@ const Job = props => (
         {props.when}
       </Detail>
     </Meta>
-    <Summary>{props.summary}</Summary>
+    <Summary>
+      <ul>
+        {props.summary.map(bullet => (
+          <li>
+            <Highlighter
+              highlightClassName="buzzword"
+              searchWords={BUZZWORDS}
+              textToHighlight={bullet}
+            />
+          </li>
+        ))}
+      </ul>
+    </Summary>
   </Container>
 );
 
@@ -52,13 +82,27 @@ const Meta = styled.div``;
 
 const Summary = styled.div`
   width: 5in;
+
+  ul {
+    margin: 0;
+    padding: 0;
+
+    li {
+      margin-top: 0.5rem;
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+  }
 `;
 
 const Container = styled.div`
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  margin-top: 2rem;
+
+  margin-top: ${props => (props.first ? "0.6rem" : "2rem")};
 `;
 
 export default Job;

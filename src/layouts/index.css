@@ -6,12 +6,18 @@ body {
 
 body {
   font-family: "Oakes";
+  font-size: 14px;
   color: #444;
-  letter-spacing: 0.8px;
+  letter-spacing: 0.5px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 p {
   line-height: 1.425;
+}
+
+.buzzword {
+  background-color: transparent;
+  color: #0077aa;
 }

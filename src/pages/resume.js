@@ -32,43 +32,65 @@ const ResumePage = () => (
 
     <Section>
       <SectionTitle>
-        <TitleIcon src={work} alt="hand holding wrench" />
+        <TitleIcon src={work} alt="resume on a clipboard" />
         experience
       </SectionTitle>
       <Job
+        first={true}
         company="EagleDream Technologies"
         location="Rochester, NY"
         title="Software Engineer"
         when="August '16 - Present"
-        summary="Joined the product team where I learned a lot about the software development lifecycle. I worked on new features in the AngularJS front-end owning each task from start to finish including unit testing, writing manual testing steps, and collaborating with our release engineer."
+        summary={[
+          "Leading front-end team building a client’s product utilizing AngularJS, unit testing, and end-to-end testing with Protractor",
+          "Promoting the sharing of knowledge and code within the organization",
+          "Refactored a React application to leverage Redux and guided the team to implement best practices",
+          "Interviewed many software engineer candidates of varying experience levels",
+        ]}
       />
       <Job
         company="Cenify"
         location="Rochester, NY"
         title="Software Engineer"
-        when="August '16 - Present"
-        summary="Joined the product team where I learned a lot about the software development lifecycle. I worked on new features in the AngularJS front-end owning each task from start to finish including unit testing, writing manual testing steps, and collaborating with our release engineer."
+        when="January '16 - May '16"
+        summary={[
+          "Researched starting a React application using webpack and npm scripts",
+          "Developed an internal tool with Express and MongoDB to manage devices paired with an IoT platform",
+          "Demonstrated ability to make an impact on a small startup team",
+        ]}
       />
       <Job
         company="Treehouse"
         location="Remote"
         title="Guest Teacher"
         when="April '16"
-        summary="Wrote the product team where I learned a lot about the software development lifecycle. I worked on new features in the AngularJS front-end owning each task from start to finish including unit testing, writing manual testing steps, and collaborating with our release engineer."
+        summary={[
+          "Worked remotely for over a month to create a course for Treehouse that focuses on the basics of user authentication and authorization in a Node.js Express server-side rendered application",
+          "Wrote a complete course script, example project, and short quizzes for the end of each section",
+          "Delivered a section of the course each week and reviewed it with a full-time Treehouse teacher",
+        ]}
       />
       <Job
         company="Apple"
         location="Cupertino, CA"
         title="Software Engineer Intern"
         when="January '15 - August '15"
-        summary="Joined the product team where I learned a lot about the software development lifecycle. I worked on new features in the AngularJS front-end owning each task from start to finish including unit testing, writing manual testing steps, and collaborating with our release engineer."
+        summary={[
+          "Started to create a Stack Overflow clone using in-house frameworks built around AngularJS and a Ruby backend",
+          "Conducted a live demo of the application during a presentation to management that highlighted the need for its adoption",
+          "Regularly attended meetings with a cross-functional working group focused on improving internal software UX by effectively documenting best practices",
+        ]}
       />
       <Job
         company="NimbleUser"
         location="Rochester, NY"
         title="UX Engineer Co-op"
         when="June '14 - December '14"
-        summary="Joined the product team where I learned a lot about the software development lifecycle. I worked on new features in the AngularJS front-end owning each task from start to finish including unit testing, writing manual testing steps, and collaborating with our release engineer."
+        summary={[
+          "Contributed to product feature development in AngularJS front-end",
+          "Wrote unit tests using Karma and Jasmine and outlined manual testing steps for each feature",
+          "Collaborated with release engineer to ensure features we’re ready to merge and deploy",
+        ]}
       />
     </Section>
 
@@ -105,7 +127,7 @@ const Section = styled.section`
 `;
 
 const SectionBody = styled.div`
-  margin-top: 0.6rem;
+  margin-top: 0.2rem;
 
   a {
     color: #007faa;
@@ -116,6 +138,7 @@ const SectionBody = styled.div`
 const ContactOption = styled.div`
   display: flex;
   align-items: center;
+  font-size: 15px;
 
   a {
     color: #444;
@@ -168,18 +191,12 @@ const Header = styled.header`
   align-items: center;
   justify-content: space-between;
   border-bottom: 2px solid #eee;
-  padding-bottom: 0.2in;
+  padding-bottom: 0.5rem;
 `;
 
 const Page = styled.div`
-  background: #fff;
-  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
-  padding: 0.5in;
   width: 8.5in;
-  margin: 2rem auto;
-  /* margin: 0.2in; */
   line-height: 1.425;
-  letter-spacing: 0.8px;
   color: #444;
 
   a {
