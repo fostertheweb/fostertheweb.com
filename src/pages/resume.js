@@ -127,8 +127,6 @@ const Section = styled.section`
 `;
 
 const SectionBody = styled.div`
-  margin-top: 0.2rem;
-
   a {
     color: #007faa;
     font-weight: 500;

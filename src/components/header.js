@@ -5,11 +5,13 @@ import avatar from "./avatar@2x.gif";
 import github from "../icons/github.png";
 
 const Header = () => (
-  <div>
+  <Container>
     <Row>
       <Avatar
         src={avatar}
         alt="illustration of Jonathan happily coding on his ThinkPad"
+        width={96}
+        height={96}
       />
       <Me>
         <Name>Jonathan Foster</Name>
@@ -22,7 +24,7 @@ const Header = () => (
         GitHub
       </a>
     </Nav>
-  </div>
+  </Container>
 );
 
 const Icon = styled.img`
@@ -74,7 +76,9 @@ const Row = styled.div`
   align-items: center;
   padding: 1rem;
   height: 6rem;
+`;
 
+const Container = styled.div`
   @media print {
     & {
       display: none;

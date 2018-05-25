@@ -99,10 +99,10 @@ const Summary = styled.div`
 
 const Container = styled.div`
   display: flex;
-  align-items: flex-start;
+  align-items: baseline;
   justify-content: space-between;
 
-  margin-top: ${props => (props.first ? "0.6rem" : "2rem")};
+  margin-top: ${props => (props.first ? "0.5rem" : "1.5rem")};
 `;
 
 export default Job;
