@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "gatsby-link";
 import styled from "styled-components";
-import avatar from "./avatar.png";
+import avatar from "./avatar@2x.gif";
 import github from "../icons/github.png";
 
 const Header = () => (
