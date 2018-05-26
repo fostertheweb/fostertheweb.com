@@ -2,44 +2,43 @@ import React from "react";
 import Link from "gatsby-link";
 import styled from "styled-components";
 import avatar from "./avatar@2x.gif";
-import github from "../icons/github.png";
 
 const Header = () => (
   <Container>
-    <Row>
-      <Avatar
-        src={avatar}
-        alt="illustration of Jonathan happily coding on his ThinkPad"
-        width={96}
-        height={96}
-      />
-      <Me>
-        <Name>Jonathan Foster</Name>
-        <Phrase>enjoying javascript</Phrase>
-      </Me>
-    </Row>
-    <Nav>
-      <a href="https://github.com/fostertheweb">
-        <Icon src={github} alt="github logo" />
-        GitHub
-      </a>
-    </Nav>
+    <Avatar
+      src={avatar}
+      alt="illustration of Jonathan happily coding on his ThinkPad"
+      width={96}
+      height={96}
+    />
+    <Me>
+      <Name>Jonathan Foster</Name>
+      <Phrase>
+        <span role="image">💬</span>
+        excited about graphql
+      </Phrase>
+    </Me>
   </Container>
 );
 
-const Icon = styled.img`
-  margin: 0 0.2rem;
-  width: 32px;
-  height: 32px;
-`;
-
 const Phrase = styled.div`
   color: #939393;
-  margin-top: 0.5rem;
+
+  span {
+    margin-right: 0.5rem;
+  }
 `;
 
 const Me = styled.div`
-  margin: 0 1rem;
+  margin: 0 2rem;
+  border-color: #eee;
+  border-style: solid;
+  border-width: 2px 0 2px;
+  width: 5in;
+  height: 6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 `;
 
 const Name = styled.h1`
@@ -50,40 +49,11 @@ const Name = styled.h1`
   margin: 0;
 `;
 
-const Nav = styled.nav`
-  margin-left: 1rem;
-
-  a {
-    font-weight: 500;
-    color: #444;
-    text-decoration: none;
-    transition: border-color linear 300ms;
-    border: 2px solid #ddd;
-    border-radius: 0.5rem;
-    display: flex;
-    align-items: center;
-    width: 6rem;
-    line-height: 36px;
-
-    &:hover {
-      border-color: #3498db;
-    }
-  }
-`;
-
-const Row = styled.div`
+const Container = styled.div`
   display: flex;
   align-items: center;
-  padding: 1rem;
+  margin: 2rem 2rem 1rem 2rem;
   height: 6rem;
-`;
-
-const Container = styled.div`
-  @media print {
-    & {
-      display: none;
-    }
-  }
 `;
 
 const Avatar = styled.img`

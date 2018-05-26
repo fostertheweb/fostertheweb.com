@@ -5,10 +5,12 @@ const IndexPage = () => (
   <Container>
     <List>
       <li>
+        <span role="image">🦅</span>
         Software Engineer @{" "}
         <a href="https://eagledream.com">EagleDream Technologies</a>
       </li>
       <li>
+        <span role="image">📺</span>
         <a href="https://teamtreehouse.com/library/user-authentication-with-express-and-mongo">
           User Authentication with Express and Mongo
         </a>{" "}
@@ -19,12 +21,16 @@ const IndexPage = () => (
 );
 
 const List = styled.ul`
-  margin: 0 0 0 1rem;
+  margin: 0 0 0 2rem;
   padding: 0;
-  list-style: inside;
+  list-style: none;
 
   li {
-    margin-top: 0.5rem;
+    margin-bottom: 0.8rem;
+  }
+
+  span {
+    margin-right: 0.5rem;
   }
 
   a {
@@ -37,7 +43,6 @@ const List = styled.ul`
 `;
 
 const Container = styled.div`
-  padding: 1rem;
   max-width: 5in;
 `;
 

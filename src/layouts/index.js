@@ -1,8 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Helmet from "react-helmet";
+import styled from "styled-components";
 
 import Header from "../components/header";
+import Sidebar from "../components/sidebar";
 import "./index.css";
 import "typeface-sanchez";
 import "@fostertheweb/typeface-oakes";
@@ -17,9 +19,16 @@ const Layout = ({ children, data }) => (
       ]}
     />
     <Header />
-    <div>{children()}</div>
+    <Row>
+      <Sidebar />
+      <div>{children()}</div>
+    </Row>
   </div>
 );
+
+const Row = styled.div`
+  display: flex;
+`;
 
 Layout.propTypes = {
   children: PropTypes.func,
