@@ -10,7 +10,7 @@ import "typeface-sanchez";
 import "@fostertheweb/typeface-oakes";
 
 const Layout = ({ children, data }) => (
-  <div>
+  <Container>
     <Helmet
       title={data.site.siteMetadata.title}
       meta={[
@@ -23,11 +23,17 @@ const Layout = ({ children, data }) => (
       <Sidebar />
       <div>{children()}</div>
     </Row>
-  </div>
+  </Container>
 );
 
 const Row = styled.div`
   display: flex;
+`;
+
+const Container = styled.div`
+  margin: 3rem auto;
+  width: 100%;
+  max-width: 800px;
 `;
 
 Layout.propTypes = {
