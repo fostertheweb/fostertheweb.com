@@ -6,7 +6,7 @@ const Sidebar = () => (
   <Nav>
     <a href="https://github.com/fostertheweb">
       <Icon src={github} alt="github logo" />
-      GitHub
+      <Text>GitHub</Text>
     </a>
   </Nav>
 );
@@ -16,6 +16,8 @@ const Icon = styled.img`
   width: 32px;
   height: 32px;
 `;
+
+const Text = styled.span``;
 
 const Nav = styled.nav`
   margin-left: 2rem;
@@ -30,7 +32,6 @@ const Nav = styled.nav`
     display: flex;
     align-items: center;
     width: 6rem;
-    line-height: 36px;
 
     &:hover {
       border-color: #3498db;
