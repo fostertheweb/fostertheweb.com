@@ -10,6 +10,10 @@ const IndexPage = () => (
         <a href="https://eagledream.com">EagleDream Technologies</a>
       </li>
       <li>
+        <span role="image">🌳</span>
+        <a href="https://github.com/fostertheweb/terraria">Super Simple Terraria Server</a>
+      </li>
+      <li>
         <span role="image">📺</span>
         <a href="https://teamtreehouse.com/library/user-authentication-with-express-and-mongo">
           User Authentication with Express and Mongo
