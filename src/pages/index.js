@@ -5,9 +5,9 @@ const IndexPage = () => (
   <Container>
     <List>
       <li>
-        <span role="image">🦅</span>
+        <span role="image">🏭</span>
         Software Engineer @{" "}
-        <a href="https://eagledream.com">EagleDream Technologies</a>
+        <a href="https://www.enelx.com/en">Enel X</a>
       </li>
       <li>
         <span role="image">🌳</span>
