@@ -7,7 +7,7 @@ const IndexPage = () => (
       <li>
         <span role="image">🏭</span>
         Software Engineer @{" "}
-        <a href="https://www.enelx.com/en">Enel X</a>
+        <a href="https://www.enelx.com/n-a/en">Enel X</a>
       </li>
       <li>
         <span role="image">🌳</span>
