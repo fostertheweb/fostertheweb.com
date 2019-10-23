@@ -7,7 +7,6 @@ import Header from "../components/header";
 import Sidebar from "../components/sidebar";
 import "./index.css";
 import "typeface-sanchez";
-import "@fostertheweb/typeface-oakes";
 
 const Layout = ({ children, data }) => (
   <Container>
