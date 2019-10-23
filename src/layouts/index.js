@@ -6,6 +6,7 @@ import styled from "styled-components";
 import Header from "../components/header";
 import Sidebar from "../components/sidebar";
 import "./index.css";
+import "typeface-open-sans";
 import "typeface-sanchez";
 
 const Layout = ({ children, data }) => (
