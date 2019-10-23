@@ -16,6 +16,7 @@ const Layout = ({ children, data }) => (
       meta={[
         { name: "description", content: "Jonathan Foster, Software Engineer." },
         { name: "keywords", content: "javascript" },
+        { name: "google-site-verification", content: "Fu8OGArxgaPKQOgzL7WkR1zkTpArjuUnu3CmjOjPxVk" },
       ]}
     />
     <Header />
