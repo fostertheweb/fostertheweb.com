@@ -31,21 +31,15 @@ const ResumePage = () => (
     </Header>
 
     <Section>
-      <SectionTitle>
-        <TitleIcon src={work} alt="resume on a clipboard" />
-        experience
-      </SectionTitle>
       <Job
-        first={true}
         company="Enel X"
         location="Rochester, NY"
         title="Software Engineer"
         when="September '18 - Present"
         summary={[
           "Design and document architecture managed by Terraform and deployed to AWS",
-          "Troubleshoot production issues via CloudWatch and Splunk logs",
-          "Collaborate with distributed engineering organization",
-          "Interview software engineer candidates ranging in levels from intern to senior",
+          "Troubleshoot consumer facing production issues via CloudWatch and Splunk logs",
+          "Interview software engineer candidates ranging in level from intern to senior",
         ]}
       />
       <Job
@@ -65,8 +59,7 @@ const ResumePage = () => (
         title="Software Engineer"
         when="January '16 - May '16"
         summary={[
-          "Started development of a React application using webpack and npm scripts",
-          "Developed an internal tool with Express and MongoDB to manage devices paired with an IoT platform",
+          "Started development of internal and consumer facing applications using Express, MongoDB, and React with webpack and npm scripts",
           "Demonstrated ability to make an impact on a small startup team",
         ]}
       />
@@ -76,9 +69,8 @@ const ResumePage = () => (
         title="Guest Teacher"
         when="April '16"
         summary={[
-          "Worked remotely for over a month to create a course for Treehouse that focuses on the basics of user authentication and authorization in a Node.js Express server-side rendered application",
-          "Wrote a complete course script, example project, and short quizzes for the end of each section",
-          "Delivered a section of the course each week and reviewed it with a full-time Treehouse teacher",
+          "Worked remotely for over a month to create a course for Treehouse about user authentication and authorization in a Node.js Express server-side rendered application",
+          "Wrote a complete course script, example project, and quizzes for the end of each section",
         ]}
       />
       <Job
@@ -87,9 +79,8 @@ const ResumePage = () => (
         title="Software Engineer Intern"
         when="January '15 - August '15"
         summary={[
-          "Started to create a Stack Overflow clone using in-house frameworks built around AngularJS and a Ruby backend",
-          "Conducted a live demo of the application during a presentation to management that highlighted the need for its adoption",
-          "Regularly attended meetings with a cross-functional working group focused on improving internal software UX by effectively documenting best practices",
+          "Conducted a live demo of the internal Stack Overflow clone I developed during a presentation to upper management",
+          "Regularly attended meetings with a cross-functional working group focused on improving internal software UX",
         ]}
       />
       <Job
@@ -98,9 +89,7 @@ const ResumePage = () => (
         title="UX Engineer Co-op"
         when="June '14 - December '14"
         summary={[
-          "Contributed to product feature development in AngularJS front-end",
-          "Wrote unit tests using Karma and Jasmine and outlined manual testing steps for each feature",
-          "Collaborated with release engineer to ensure features were ready to merge and deploy",
+          "Contributed to product development in AngularJS front-end by adding new features with cooresponding unit tests and outlined manual testing steps",
         ]}
       />
     </Section>
@@ -160,12 +149,12 @@ const Tech = styled.span`
 `;
 
 const SectionTitle = styled.div`
-  font-size: 1.8rem;
+  font-size: 22px;
   color: #336e7b;
   display: flex;
   align-items: center;
   font-variant: small-caps;
-  letter-spacing: 0.1rem;
+  letter-spacing: 0.05rem;
   font-weight: bold;
 `;
 
@@ -190,8 +179,8 @@ const Icon = styled.img`
 
 const TitleIcon = styled.img`
   margin-right: 0.6rem;
-  width: 32px;
-  height: 32px;
+  width: 24px;
+  height: 24px;
   object-fit: contain;
 `;
 

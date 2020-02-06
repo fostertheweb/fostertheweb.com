@@ -38,4 +38,8 @@ p {
   .no-print {
     display: none;
   }
+
+  body {
+    background: white;
+  }
 }

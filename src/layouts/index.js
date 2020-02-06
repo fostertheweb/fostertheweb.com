@@ -37,6 +37,10 @@ const Container = styled.div`
   margin: 3rem auto;
   width: 100%;
   max-width: 800px;
+
+  @media print {
+    margin: 0 auto;
+  }
 `;
 
 Layout.propTypes = {

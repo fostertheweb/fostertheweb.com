@@ -65,7 +65,7 @@ const Detail = styled.div`
   display: flex;
   align-items: center;
   color: #696969;
-  font-size: 15px;
+  font-size: 14px;
   line-height: 25px;
 `;
 
@@ -78,7 +78,7 @@ const Icon = styled.img`
 
 const Company = styled.div`
   font-weight: bold;
-  font-size: 20px;
+  font-size: 18px;
   margin-bottom: 0.2rem;
 `;
 
@@ -86,6 +86,7 @@ const Meta = styled.div``;
 
 const Summary = styled.div`
   width: 5in;
+  font-size: 14px;
 
   ul {
     margin: 0;
