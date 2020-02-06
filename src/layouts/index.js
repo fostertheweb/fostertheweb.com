@@ -4,10 +4,11 @@ import Helmet from "react-helmet";
 import styled from "styled-components";
 
 import Header from "../components/header";
-import Sidebar from "../components/sidebar";
+import Avatar from "../components/avatar";
 import "./index.css";
 import "typeface-open-sans";
 import "typeface-sanchez";
+import "typeface-quattrocento-sans";
 
 const Layout = ({ children, data }) => (
   <Container>
@@ -16,20 +17,21 @@ const Layout = ({ children, data }) => (
       meta={[
         { name: "description", content: "Jonathan Foster, Software Engineer." },
         { name: "keywords", content: "javascript" },
-        { name: "google-site-verification", content: "Fu8OGArxgaPKQOgzL7WkR1zkTpArjuUnu3CmjOjPxVk" },
+        {
+          name: "google-site-verification",
+          content: "Fu8OGArxgaPKQOgzL7WkR1zkTpArjuUnu3CmjOjPxVk",
+        },
       ]}
     />
-    <Header />
-    <Row>
-      <Sidebar />
-      <div>{children()}</div>
-    </Row>
+    <div className="top">
+      <Avatar />
+      <div>
+        <Header />
+        <div>{children()}</div>
+      </div>
+    </div>
   </Container>
 );
-
-const Row = styled.div`
-  display: flex;
-`;
 
 const Container = styled.div`
   margin: 3rem auto;
