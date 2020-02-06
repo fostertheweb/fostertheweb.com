@@ -22,6 +22,10 @@ const BUZZWORDS = [
   "Karma",
   "Jasmine",
   "MongoDB",
+  "AWS",
+  "Splunk",
+  "CloudWatch",
+  "Terraform",
 ];
 
 const Job = props => (

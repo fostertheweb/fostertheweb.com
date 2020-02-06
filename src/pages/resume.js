@@ -37,15 +37,26 @@ const ResumePage = () => (
       </SectionTitle>
       <Job
         first={true}
+        company="Enel X"
+        location="Rochester, NY"
+        title="Software Engineer"
+        when="September '18 - Present"
+        summary={[
+          "Design and document architecture managed by Terraform and deployed to AWS",
+          "Troubleshoot production issues via CloudWatch and Splunk logs",
+          "Collaborate with distributed engineering organization",
+          "Interview software engineer candidates ranging in levels from intern to senior",
+        ]}
+      />
+      <Job
         company="EagleDream Technologies"
         location="Rochester, NY"
         title="Software Engineer"
-        when="August '16 - Present"
+        when="August '16 - September '18"
         summary={[
-          "Leading front-end team building a client’s product utilizing AngularJS, unit testing, and end-to-end testing with Protractor",
-          "Promoting the sharing of knowledge and code within the organization",
-          "Refactored a React application to leverage Redux and guided the team to implement best practices",
-          "Interviewed many software engineer candidates of varying experience levels",
+          "Led front-end team building a product for customer utilizing AngularJS, unit testing, and end-to-end testing with Protractor",
+          "Promoted the sharing of knowledge and code within the organization",
+          "Refactored a React application to leverage Redux and guided the team to implement modern best practices",
         ]}
       />
       <Job
@@ -54,7 +65,7 @@ const ResumePage = () => (
         title="Software Engineer"
         when="January '16 - May '16"
         summary={[
-          "Researched starting a React application using webpack and npm scripts",
+          "Started development of a React application using webpack and npm scripts",
           "Developed an internal tool with Express and MongoDB to manage devices paired with an IoT platform",
           "Demonstrated ability to make an impact on a small startup team",
         ]}
@@ -89,7 +100,7 @@ const ResumePage = () => (
         summary={[
           "Contributed to product feature development in AngularJS front-end",
           "Wrote unit tests using Karma and Jasmine and outlined manual testing steps for each feature",
-          "Collaborated with release engineer to ensure features we’re ready to merge and deploy",
+          "Collaborated with release engineer to ensure features were ready to merge and deploy",
         ]}
       />
     </Section>
