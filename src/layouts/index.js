@@ -23,20 +23,34 @@ const Layout = ({ children, data }) => (
         },
       ]}
     />
-    <div className="top">
+    <Flex>
       <Avatar />
       <div>
         <Header />
         <div>{children()}</div>
       </div>
-    </div>
+    </Flex>
   </Container>
 );
 
+const Flex = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media (min-width: 1024px) {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+`;
+
 const Container = styled.div`
-  margin: 3rem auto;
-  width: 100%;
+  margin: 1rem;
   max-width: 800px;
+
+  @media (min-width: 1024px) {
+    margin: 2rem auto 0 auto;
+  }
 
   @media print {
     margin: 0 auto;

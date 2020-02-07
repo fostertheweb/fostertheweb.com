@@ -53,11 +53,6 @@ const Text = styled.div`
   margin-left: 1rem;
 `;
 
-const Emoji = styled.span`
-  font-size: 32px;
-  margin-right: 0.5rem;
-`;
-
 const Item = styled.li`
   display: flex;
   margin-top: 1.5rem;
@@ -73,7 +68,6 @@ const Subtitle = styled.div`
 
 const List = styled.ul`
   margin: 0;
-  margin-left: 2rem;
   padding: 0;
   list-style: none;
 
@@ -83,6 +77,10 @@ const List = styled.ul`
     &:hover {
       color: #333;
     }
+  }
+
+  @media (min-width: 1024px) {
+    margin-left: 2rem;
   }
 `;
 

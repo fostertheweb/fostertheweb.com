@@ -37,7 +37,7 @@ const ResumePage = () => (
         title="Software Engineer"
         when="September '18 - Present"
         summary={[
-          "Design and document architecture managed by Terraform and deployed to AWS",
+          "Design and document microservice architecture managed by Terraform and deployed to AWS",
           "Troubleshoot consumer facing production issues via CloudWatch and Splunk logs",
           "Interview software engineer candidates ranging in level from intern to senior",
         ]}
@@ -123,7 +123,7 @@ const ResumePage = () => (
 );
 
 const Section = styled.section`
-  margin-top: 0.2in;
+  margin-top: 0.15in;
 `;
 
 const SectionBody = styled.div`
@@ -149,7 +149,7 @@ const Tech = styled.span`
 `;
 
 const SectionTitle = styled.div`
-  font-size: 22px;
+  font-size: 24px;
   color: #336e7b;
   display: flex;
   align-items: center;

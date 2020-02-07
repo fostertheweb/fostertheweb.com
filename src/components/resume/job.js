@@ -85,15 +85,15 @@ const Company = styled.div`
 const Meta = styled.div``;
 
 const Summary = styled.div`
-  width: 5in;
-  font-size: 14px;
+  width: 5.4in;
+  font-size: 15px;
 
   ul {
     margin: 0;
     padding: 0;
 
     li {
-      margin-top: 0.5rem;
+      margin-top: 0.45rem;
 
       &:first-child {
         margin-top: 0;
