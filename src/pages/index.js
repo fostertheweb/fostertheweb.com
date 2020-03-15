@@ -13,22 +13,32 @@ const IndexPage = () => (
   <Container>
     <List>
       <Item>
-        <FontAwesomeIcon icon={faIndustryAlt} color="#461e7d" size="2x" />
+        <Box>
+          <FontAwesomeIcon icon={faIndustryAlt} color="#461e7d" size="2x" />
+        </Box>
         <Text>
           Software Engineer @ <a href="https://www.enelx.com/n-a/en">Enel X</a>
         </Text>
       </Item>
       <Item>
-        <FontAwesomeIcon icon={faHandHoldingUsd} size="2x" color="#38b2ac" />
+        <Box>
+          <FontAwesomeIcon icon={faHandHoldingUsd} size="2x" color="#38b2ac" />
+        </Box>
         <Text>
           <div>
             <a href="https://foster.finance">foster.finance</a>
           </div>
-          <Subtitle>active side project</Subtitle>
+          <Subtitle>personal finance project</Subtitle>
         </Text>
       </Item>
       <Item>
-        <FontAwesomeIcon icon={faChalkboardTeacher} size="2x" color="#5fcf80" />
+        <Box>
+          <FontAwesomeIcon
+            icon={faChalkboardTeacher}
+            size="2x"
+            color="#5fcf80"
+          />
+        </Box>
         <Text>
           <a href="https://teamtreehouse.com/library/user-authentication-with-express-and-mongo">
             User Authentication with Express and Mongo
@@ -37,7 +47,9 @@ const IndexPage = () => (
         </Text>
       </Item>
       <Item>
-        <FontAwesomeIcon icon={faGithub} size="2x" />
+        <Box>
+          <FontAwesomeIcon icon={faGithub} size="2x" />
+        </Box>
         <Text>
           <div>
             <a href="https://github.com/fostertheweb">fostertheweb</a>
@@ -51,19 +63,28 @@ const IndexPage = () => (
 
 const Text = styled.div`
   margin-left: 1rem;
+  margin-top: 0.5rem;
+
+  @media (min-width: 1024px) {
+    margin-top: 0;
+  }
 `;
 
 const Item = styled.li`
   display: flex;
+  flex-direction: column;
+  align-content: flex-start;
   margin-top: 1.5rem;
-  background: #fff;
-  padding: 1rem;
-  border-radius: 0.2rem;
-  align-items: center;
+
+  @media (min-width: 1024px) {
+    flex-direction: row;
+    align-items: center;
+  }
 `;
 
 const Subtitle = styled.div`
-  color: #748669;
+  margin-top: 0.2rem;
+  font-size: 0.8rem;
 `;
 
 const List = styled.ul`
@@ -78,14 +99,13 @@ const List = styled.ul`
       color: #333;
     }
   }
-
-  @media (min-width: 1024px) {
-    margin-left: 2rem;
-  }
 `;
 
-const Container = styled.div`
-  max-width: 5in;
+const Box = styled.div`
+  width: 64px;
+  text-align: center;
 `;
+
+const Container = styled.div``;
 
 export default IndexPage;

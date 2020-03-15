@@ -24,7 +24,6 @@ const Layout = ({ children, data }) => (
       ]}
     />
     <Flex>
-      <Avatar />
       <div>
         <Header />
         <div>{children()}</div>
@@ -45,12 +44,7 @@ const Flex = styled.div`
 `;
 
 const Container = styled.div`
-  margin: 1rem;
-  max-width: 800px;
-
-  @media (min-width: 1024px) {
-    margin: 2rem auto 0 auto;
-  }
+  margin: 2rem;
 
   @media print {
     margin: 0 auto;

@@ -9,8 +9,8 @@ const Avatar = () => (
     className="no-print"
     src={avatar}
     alt="illustration of Jonathan happily coding on his ThinkPad"
-    width={256}
-    height={256}
+    width={64}
+    height={64}
   />
 );
 
