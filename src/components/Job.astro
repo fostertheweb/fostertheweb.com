@@ -1,0 +1,115 @@
+---
+export interface Props {
+  first?: boolean;
+  company: string;
+  title: string;
+  when: string;
+  location: string;
+  summary: string[];
+}
+
+import CalendarIcon from "./CalendarIcon.astro";
+import Highlighter from "./Highlighter.astro";
+import IdIcon from "./IdIcon.astro";
+import MapIcon from "./MapIcon.astro";
+
+const { company, title, when, location, summary } = Astro.props;
+
+const BUZZWORDS = [
+  "npm",
+  "webpack",
+  "React",
+  "Redux",
+  "AngularJS",
+  "Node.js",
+  "Express",
+  "Bootstrap",
+  "AWS",
+  "UX",
+  "Protractor",
+  "Karma",
+  "Jasmine",
+  "MongoDB",
+  "AWS",
+  "Splunk",
+  "CloudWatch",
+  "Terraform",
+  "Jenkins",
+  "Docker",
+  "CI/CD",
+  "CodeBuild",
+  "Lambda",
+  "TypeScript",
+];
+---
+
+<div class="container">
+  <div>
+    <div class="company">{company}</div>
+    <div class="detail">
+      <IdIcon />
+      {title}
+    </div>
+    <div class="detail">
+      <CalendarIcon />
+      {when}
+    </div>
+    <div class="detail">
+      <MapIcon />
+      {location}
+    </div>
+  </div>
+  <div class="summary">
+    <ul>
+      {
+        summary.map((bullet) => (
+          <li>
+            <Highlighter words={BUZZWORDS} text={bullet} />
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</div>
+<style>
+  .container {
+    width: 100%;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-top: 1rem;
+    padding-top: 1rem;
+  }
+
+  .summary {
+    width: 5.4in;
+    font-size: 15px;
+  }
+
+  .summary ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  .summary ul li {
+    margin-top: 0.45rem;
+    list-style: outside;
+  }
+
+  .summary ul li:first-child {
+    margin-top: 0;
+  }
+
+  .company {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 0.2rem;
+  }
+
+  .detail {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    color: #696969;
+  }
+</style>

@@ -1,0 +1,30 @@
+---
+export interface Props {
+  words: string[];
+  text: string;
+}
+
+const { words, text } = Astro.props;
+
+function highlight(text: string) {
+  let highlighted = text;
+
+  words.forEach((word) => {
+    if (text.match(word)) {
+      highlighted = text.replace(
+        word,
+        `<span class="highlight">${word}</span>`
+      );
+    }
+  });
+
+  return highlighted;
+}
+---
+
+<div set:html={highlight(text)} />
+<style>
+  .highlight {
+    color: #0077aa;
+  }
+</style>

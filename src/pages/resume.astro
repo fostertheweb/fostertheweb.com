@@ -1,0 +1,207 @@
+---
+import Job from "../components/Job.astro";
+import LinkIcon from "../components/LinkIcon.astro";
+import MailIcon from "../components/MailIcon.astro";
+import PhoneIcon from "../components/PhoneIcon.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Jonathan Foster">
+  <div class="page">
+    <header>
+      <div>
+        <div class="name">Jonathan Foster</div>
+        <div class="subtitle">
+          🐯 RIT Alumni &middot; 🐶 Dog Dad &middot; ☕️ Coffee Consumer{" "}
+        </div>
+      </div>
+
+      <div class="contact">
+        <div class="contact-option">
+          <PhoneIcon />
+          (973) 525-4174
+        </div>
+        <div class="contact-option">
+          <MailIcon />
+          <a href="mailto:fostertheweb@gmail.com">fostertheweb@gmail.com</a>
+        </div>
+        <div class="contact-option">
+          <LinkIcon />
+          <a href="https://fostertheweb.com">fostertheweb.com</a>
+        </div>
+      </div>
+    </header>
+
+    <div class="section">
+      <Job
+        company="Zendesk"
+        location="Remote"
+        title="Senior Software Engineer"
+        when="August '21 - Present"
+        summary={[
+          "Contribute to various shopping cart web experiences",
+          "Participate in recurring meetings focused on improving software quality and developer experience",
+          "Integrated Optimizely into React application for A/B Testing",
+          "Assisted with maintenance of CI/CD pipelines for department applications and services",
+        ]}
+      />
+      <Job
+        company="Enel X"
+        location="Rochester, NY / Remote"
+        title="Software Engineer"
+        when="September '18 - August '21"
+        summary={[
+          "Architect, implement, document and support applications built with TypeScript and Node.js",
+          "Deploy and manage infrastructure on AWS using Terraform",
+          "Coorespond with support team to troubleshoot production issues via Splunk and CloudWatch",
+          "Configured and deployed engineering team's CI/CD pipeline utilizing Docker and Jenkins",
+        ]}
+      />
+      <Job
+        company="EagleDream Technologies"
+        location="Rochester, NY"
+        title="Software Engineer"
+        when="August '16 - September '18"
+        summary={[
+          "Led UI team building a product with AngularJS including unit testing and end-to-end testing with Protractor",
+          "Promoted the sharing of knowledge and code within the organization",
+          "Refactored a React application to leverage Redux and guided the team to implement modern best practices",
+        ]}
+      />
+      <Job
+        company="Cenify"
+        location="Rochester, NY"
+        title="Software Engineer"
+        when="January '16 - May '16"
+        summary={[
+          "Started development of internal and consumer facing applications using Express, MongoDB, and React with webpack and npm scripts",
+          "Demonstrated ability to make an impact on a small startup team",
+        ]}
+      />
+      <Job
+        company="Treehouse"
+        location="Remote"
+        title="Guest Teacher"
+        when="April '16"
+        summary={[
+          "Worked remotely for over a month to create a course for Treehouse about user authentication and authorization in a Node.js Express server-side rendered application",
+          "Wrote a complete course script, example project, and quizzes for the end of each section",
+        ]}
+      />
+      <Job
+        company="Apple"
+        location="Cupertino, CA"
+        title="Software Engineer Intern"
+        when="January '15 - August '15"
+        summary={[
+          "Conducted a live demo of the internal Stack Overflow clone I developed during a presentation to upper management",
+          "Regularly attended meetings with a cross-functional working group focused on improving internal software UX",
+        ]}
+      />
+    </div>
+  </div>
+</Layout>
+<style>
+  @font-face {
+    font-family: "bluu";
+    src: url("/fonts/bluunext-bold-webfont.woff2") format("woff2"),
+      url("/fonts/bluunext-bold-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "bluu";
+    src: url("/fonts/bluunext-bolditalic-webfont.woff2") format("woff2"),
+      url("/fonts/bluunext-bolditalic-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: italic;
+  }
+
+  @font-face {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("/fonts/Inter-Regular.woff2?v=3.19") format("woff2"),
+      url("/fonts/Inter-Regular.woff?v=3.19") format("woff");
+  }
+
+  @font-face {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url("/fonts/Inter-Bold.woff2?v=3.19") format("woff2"),
+      url("/fonts/Inter-Bold.woff?v=3.19") format("woff");
+  }
+
+  body {
+    margin: 0;
+  }
+
+  .page {
+    margin: 0 auto 0.4in auto;
+    font-family: "Inter", sans-serif;
+    text-size-adjust: 100%;
+    line-height: 1.425;
+    color: #444;
+    max-width: 1024px;
+
+    a {
+      text-decoration: none;
+    }
+  }
+
+  header {
+    background-color: #f1fff8;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.4in;
+  }
+
+  .name {
+    font-family: "bluu";
+    font-size: 3.5rem;
+    color: #3b6f55;
+  }
+
+  .subtitle {
+    padding: 0 1.5rem;
+    font-size: 0.8rem;
+    color: #555;
+  }
+
+  .contact-option {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    margin-top: 0.25rem;
+
+    a {
+      color: #444;
+    }
+  }
+
+  .section {
+    margin: 0 0.4in;
+  }
+
+  .section-title {
+    font-size: 24px;
+    color: #336e7b;
+    display: flex;
+    align-items: center;
+    font-variant: small-caps;
+    letter-spacing: 0.05rem;
+    font-weight: bold;
+  }
+
+  .section-body {
+    a {
+      color: #007faa;
+      font-weight: 500;
+    }
+  }
+</style>
