@@ -1,22 +1,22 @@
 ---
 import GitHub from "./icons/GitHub.astro";
-import Twitter from "./icons/Twitter.astro";
 import LinkedIn from "./icons/LinkedIn.astro";
+import Twitter from "./icons/Twitter.astro";
 ---
 
 <div class="flex items-start gap-4 py-4">
   <img src="/images/memoji-2.png" alt="memoji" class="w-1/6 rounded" />
   <div class="flex flex-col gap-2">
-    <p>
+    <p class="text-slate-800">
       Hello! I&apos;m, <span class="font-medium text-sky-600"
         >Jonathan Foster</span
       >, currently a senior software engineer at <a
         href="https://zendesk.com"
         class="text-[rgb(154, 68, 151)]">Zendesk</a
-      >. I have been building websites for nearly two decades, and there is
-      nothing I enjoy more.
+      >. I have been building websites for nearly two decades, and there are few
+      things I enjoy more.
     </p>
-    <ul class="flex gap-4">
+    <ul class="flex gap-4 text-slate-900">
       <li class="flex items-center gap-1">
         <GitHub />
         <a href="https://github.com/fostertheweb" class="underline">GitHub</a>
@@ -26,8 +26,10 @@ import LinkedIn from "./icons/LinkedIn.astro";
         <a href="https://twitter.com/fostertheweb" class="underline">Twitter</a>
       </li>
       <li class="flex items-center gap-1">
-        <LinkedIn />   
-        <a href="https://linkedin.com/in/fostertheweb" class="underline">LinkedIn</a>
+        <LinkedIn />
+        <a href="https://linkedin.com/in/fostertheweb" class="underline"
+          >LinkedIn</a
+        >
       </li>
     </ul>
   </div>

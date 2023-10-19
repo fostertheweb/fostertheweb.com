@@ -1,20 +1,35 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
-import PostLayout from "../../layouts/PostLayout.astro";
 
 export async function getStaticPaths() {
-  const blogEntries = await getCollection('thoughts');
-  return blogEntries.map(entry => ({
-    params: { slug: entry.slug }, props: { entry },
+  const posts = await getCollection("thoughts");
+  return posts.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
   }));
 }
 
 const { entry } = Astro.props;
 const { Content } = await entry.render();
+
+const options = {
+  month: "long",
+  day: "numeric",
+  year: "numeric",
+};
 ---
 
-<Layout>
-<h1 class="font-serif text-4xl text-slate-800">{entry.data.title}</h1>
-<Content class="text-slate-900" />
+<Layout title={entry.data.title}>
+  <header class="space-y-2 py-4">
+    <h1 class="font-serif text-4xl text-slate-800">{entry.data.title}</h1>
+    <div>
+      <a href="/" class="underline">Jonathan Foster</a><span
+        class="text-slate-500"
+      >
+        - {entry.data.date.toLocaleDateString("en-US", options)}</span
+      >
+    </div>
+  </header>
+  <Content />
 </Layout>
