@@ -1,7 +1,7 @@
 ---
 title: Picking Tools
 layout: ../../layouts/PostLayout.astro
-date: 2023-11-02
+date: 2023-10-20T16:40:10.000Z
 blurb: Are you one? Probably, but you don't have to be.
 ---
 
