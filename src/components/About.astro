@@ -4,8 +4,8 @@ import LinkedIn from "./icons/LinkedIn.astro";
 import Twitter from "./icons/Twitter.astro";
 ---
 
-<div class="flex items-start gap-4 py-4">
-  <img src="/images/memoji-2.png" alt="memoji" class="w-1/6 rounded" />
+<div class="flex flex-col items-start gap-4 py-4 sm:flex-row">
+  <img src="/images/memoji-2.png" alt="memoji" class="w-1/3 rounded sm:w-1/6" />
   <div class="flex flex-col gap-2">
     <p class="text-slate-800">
       Hello! I&apos;m, <span class="font-medium text-sky-600"
@@ -19,16 +19,23 @@ import Twitter from "./icons/Twitter.astro";
     <ul class="flex gap-4 text-slate-900">
       <li class="flex items-center gap-1">
         <GitHub />
-        <a href="https://github.com/fostertheweb" class="underline">GitHub</a>
+        <a
+          href="https://github.com/fostertheweb"
+          class="underline hover:text-sky-800">GitHub</a
+        >
       </li>
       <li class="flex items-center gap-1">
         <Twitter />
-        <a href="https://twitter.com/fostertheweb" class="underline">Twitter</a>
+        <a
+          href="https://twitter.com/fostertheweb"
+          class="underline hover:text-sky-800">Twitter</a
+        >
       </li>
       <li class="flex items-center gap-1">
         <LinkedIn />
-        <a href="https://linkedin.com/in/fostertheweb" class="underline"
-          >LinkedIn</a
+        <a
+          href="https://linkedin.com/in/fostertheweb"
+          class="underline hover:text-sky-800">LinkedIn</a
         >
       </li>
     </ul>

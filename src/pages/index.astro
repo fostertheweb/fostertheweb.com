@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import About from "../components/About.astro";
+import Project from "../components/Project.astro";
 import Layout from "../layouts/Layout.astro";
 
 const thoughts = await getCollection("thoughts");
@@ -11,96 +12,39 @@ const thoughts = await getCollection("thoughts");
 
   <h2 class="py-4 font-serif text-3xl text-slate-700">Projects</h2>
   <section class="flex gap-4 py-4">
-    <div class="w-1/2">
-      <div
-        class="flex h-28 items-center justify-center rounded-lg bg-gradient-to-br from-orange-400 to-rose-500 px-4 py-8 shadow"
-      >
-        <img
-          src="/images/crowdq-fm.png"
-          class="w-2/3 drop-shadow-sm"
-          alt="crowdq.fm"
-        />
-      </div>
-      <div class="px-4">
-        <div
-          class="flex flex-col gap-4 rounded-b-md bg-white px-4 py-3 text-sm shadow"
-        >
-          <p class="text-slate-600">
-            Collaborative play queue for Spotify and YouTube.
-          </p>
-          <div class="flex items-center gap-4">
-            <a
-              href=""
-              class="w-1/2 rounded border-2 border-slate-200 py-1 text-center"
-              >Visit</a
-            >
-            <a
-              href=""
-              class="w-1/2 rounded border-2 border-slate-200 py-1 text-center"
-              >Source</a
-            >
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="w-1/2">
-      <div
-        class="flex h-28 items-center justify-center rounded-lg bg-gradient-to-br from-teal-400 to-sky-800 px-4 py-8 shadow"
-      >
-        <img
-          src="/images/crowdq-fm.png"
-          class="w-2/3 drop-shadow-sm"
-          alt="crowdq.fm"
-        />
-      </div>
-      <div class="px-4">
-        <div
-          class="flex flex-col gap-4 rounded-b-md bg-white px-4 py-3 text-sm shadow"
-        >
-          <p class="text-slate-600">
-            Collaborative play queue for Spotify and YouTube.
-          </p>
-          <div class="flex items-center gap-4">
-            <a
-              href=""
-              class="w-1/2 rounded border-2 border-slate-200 py-1 text-center"
-              >Visit</a
-            >
-            <a
-              href=""
-              class="w-1/2 rounded border-2 border-slate-200 py-1 text-center"
-              >Source</a
-            >
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <h2 class="py-4 font-serif text-3xl text-slate-700">Thoughts</h2>
-  <section>
-    <ul>
-      {
-        thoughts.map((post) => (
-          <li class="flex flex-col gap-1 py-4">
-            <a
-              href={`/thoughts/${post.slug}`}
-              class="text-lg font-semibold text-slate-800"
-            >
-              {post.data.title}
-            </a>
-            <p class="text-slate-700">{post.data.blurb}</p>
-            <span class="text-slate-500">
-              {post.data.date.toLocaleDateString("en-US", {
-                year: "numeric",
-                month: "long",
-                day: "numeric",
-              })}
-            </span>
-          </li>
-        ))
-      }
-    </ul>
+    <Project
+      name="crowdq.fm"
+      description="Collaborative play queue for Spotify and YouTube."
+      logo="/images/crowdq-fm.png"
+      backgroundClasses="from-orange-400 to-rose-500"
+      url="https://crowdq.fm"
+      repoUrl="https://github.com/fostertheweb/crowdq.fm"
+    />
   </section>
 </Layout>
+
+<h2 class="py-4 font-serif text-3xl text-slate-700">Thoughts</h2>
+<section>
+  <ul>
+    {
+      thoughts.map((post) => (
+        <li class="flex flex-col gap-1 py-4">
+          <a
+            href={`/thoughts/${post.slug}`}
+            class="text-lg font-semibold text-slate-800 hover:text-sky-800 hover:underline"
+          >
+            {post.data.title}
+          </a>
+          <p class="text-slate-700">{post.data.blurb}</p>
+          <span class="text-slate-500">
+            {post.data.date.toLocaleDateString("en-US", {
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            })}
+          </span>
+        </li>
+      ))
+    }
+  </ul>
+</section>
