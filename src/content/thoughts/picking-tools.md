@@ -1,8 +1,8 @@
 ---
-title: Picking Tools
+title: Choosing Technology in Software
 layout: ../../layouts/PostLayout.astro
 date: 2023-10-20T16:40:10.000Z
-blurb: Are you one? Probably, but you don't have to be.
+blurb: Does it matter as much as you think?
 ---
 
 Cauliflower cheese manchego halloumi. Bocconcini cheese on toast halloumi babybel caerphilly danish fontina bavarian bergkase roquefort. Cheddar smelly cheese cheese and biscuits lancashire stilton pepper jack pepper jack danish fontina. Hard cheese red leicester cheese strings cheddar rubber cheese cheese slices emmental.
