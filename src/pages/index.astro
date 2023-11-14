@@ -1,50 +1,94 @@
 ---
 import { getCollection } from "astro:content";
 import About from "../components/About.astro";
-import Project from "../components/Project.astro";
 import Layout from "../layouts/Layout.astro";
 
-const thoughts = await getCollection("thoughts");
+const essays = await getCollection("essays");
+const projects = await getCollection("projects");
+
+const content = [
+  ...essays.map((essay) => ({ ...essay, type: "essay" })),
+  ...projects.map((project) => ({ ...project, type: "project" })),
+];
+
+const feed = content.sort((a, b) => a.data.date - b.data.date);
 ---
 
 <Layout title="Jonathan Foster">
   <About />
 
-  <h2 class="py-4 font-serif text-3xl text-slate-700">Projects</h2>
-  <section class="flex gap-4 py-4">
-    <Project
-      name="crowdq.fm"
-      description="Collaborative play queue for Spotify and YouTube."
-      logo="/images/crowdq-fm.png"
-      backgroundClasses="from-orange-400 to-rose-500"
-      url="https://crowdq.fm"
-      repoUrl="https://github.com/fostertheweb/crowdq.fm"
-    />
+  <section class="pl-1">
+    <div class="flex items-center justify-between">
+      <h2 class="py-4 font-serif text-2xl text-slate-700">Feed</h2>
+      <div class="flex items-center gap-2">
+        <a
+          href="#essay"
+          class="rounded-full border-2 border-purple-600/20 bg-purple-100 px-3 py-px text-xs text-purple-900"
+        >
+          Essay
+        </a>
+        <a
+          href="#project"
+          class="rounded-full border-2 border-amber-600/20 bg-amber-100 px-3 py-px text-xs text-amber-900"
+        >
+          Project
+        </a>
+        <a
+          href="#thought"
+          class="rounded-full border-2 border-sky-600/20 bg-sky-100 px-3 py-px text-xs text-sky-900"
+        >
+          Thought
+        </a>
+        <a
+          href="#snippet"
+          class="rounded-full border-2 border-sky-600/20 bg-lime-100 px-3 py-px text-xs text-lime-900"
+        >
+          Snippet
+        </a>
+      </div>
+    </div>
+
+    <ul class="border-l-2 border-slate-200 pl-6">
+      {
+        feed.map((post) => (
+          <li class="flex flex-col gap-1 py-4">
+            <div class="flex items-center gap-2 ">
+              {post.type === "essay" && (
+                <a
+                  href={`/essays/${post.slug}`}
+                  class="relative text-lg font-semibold text-slate-800 hover:text-sky-800 hover:underline"
+                >
+                  {post.data.title}
+                  <div class="ftw-dot absolute top-1.5 h-4 w-4 rounded-full border-2 border-purple-600/20 bg-purple-100" />
+                </a>
+              )}
+              {post.type === "project" && (
+                <a
+                  href={`/projects/${post.slug}`}
+                  class="relative text-lg font-semibold text-slate-800 hover:text-sky-800 hover:underline"
+                >
+                  {post.data.title}
+                  <div class="ftw-dot absolute top-1.5 h-4 w-4 rounded-full border-2 border-amber-600/20 bg-amber-100" />
+                </a>
+              )}
+            </div>
+            <p class="text-slate-700">{post.data.blurb}</p>
+            <span class="hidden text-slate-500">
+              {post.data.date.toLocaleDateString("en-US", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              })}
+            </span>
+          </li>
+        ))
+      }
+    </ul>
   </section>
 </Layout>
 
-<h2 class="py-4 font-serif text-3xl text-slate-700">Thoughts</h2>
-<section>
-  <ul>
-    {
-      thoughts.map((post) => (
-        <li class="flex flex-col gap-1 py-4">
-          <a
-            href={`/thoughts/${post.slug}`}
-            class="text-lg font-semibold text-slate-800 hover:text-sky-800 hover:underline"
-          >
-            {post.data.title}
-          </a>
-          <p class="text-slate-700">{post.data.blurb}</p>
-          <span class="text-slate-500">
-            {post.data.date.toLocaleDateString("en-US", {
-              year: "numeric",
-              month: "long",
-              day: "numeric",
-            })}
-          </span>
-        </li>
-      ))
-    }
-  </ul>
-</section>
+<style>
+  .ftw-dot {
+    left: calc(-2rem + -1px);
+  }
+</style>

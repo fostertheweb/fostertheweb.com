@@ -1,5 +1,5 @@
 ---
-title: Choosing Technology in Software
+title: How I Think About Software Tooling
 layout: ../../layouts/PostLayout.astro
 date: 2023-10-20T16:40:10.000Z
 blurb: Does it matter as much as you think?
