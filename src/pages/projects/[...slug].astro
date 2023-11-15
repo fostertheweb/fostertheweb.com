@@ -1,0 +1,35 @@
+---
+import { getCollection } from "astro:content";
+import marked from "marked";
+import Layout from "../../layouts/Layout.astro";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("projects");
+  return posts.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const githubUrl = new URL(entry.data.repo);
+const readmeUrl = `https://raw.githubusercontent.com${githubUrl.pathname}/main/README.md`;
+const response = await fetch(readmeUrl);
+const markdown = await response.text();
+const content = marked.parse(markdown);
+---
+
+<Layout title={entry.data.name}>
+  <header class="space-y-2 py-4">
+    <h1 class="font-serif text-4xl text-slate-800">
+      <img src={entry.data.logo} class="h-6" />
+    </h1>
+    <div>
+      <a href="/" class="text-sky-800 underline hover:text-slate-800"
+        >Jonathan Foster</a
+      ><span class="text-slate-500"> - Last Commit: abcef1234</span>
+    </div>
+  </header>
+
+  <article set:html={content} />
+</Layout>

@@ -52,34 +52,46 @@ const feed = content.sort((a, b) => a.data.date - b.data.date);
       {
         feed.map((post) => (
           <li class="flex flex-col gap-1 py-4">
-            <div class="flex items-center gap-2 ">
-              {post.type === "essay" && (
-                <a
-                  href={`/essays/${post.slug}`}
-                  class="relative text-lg font-semibold text-slate-800 hover:text-sky-800 hover:underline"
-                >
-                  {post.data.title}
-                  <div class="ftw-dot absolute top-1.5 h-4 w-4 rounded-full border-2 border-purple-600/20 bg-purple-100" />
-                </a>
-              )}
-              {post.type === "project" && (
-                <a
-                  href={`/projects/${post.slug}`}
-                  class="relative text-lg font-semibold text-slate-800 hover:text-sky-800 hover:underline"
-                >
-                  {post.data.title}
-                  <div class="ftw-dot absolute top-1.5 h-4 w-4 rounded-full border-2 border-amber-600/20 bg-amber-100" />
-                </a>
-              )}
-            </div>
-            <p class="text-slate-700">{post.data.blurb}</p>
-            <span class="hidden text-slate-500">
-              {post.data.date.toLocaleDateString("en-US", {
-                year: "numeric",
-                month: "long",
-                day: "numeric",
-              })}
-            </span>
+            {post.type === "essay" && (
+              <Fragment>
+                <div class="flex items-center gap-2 ">
+                  <a
+                    href={`/essays/${post.slug}`}
+                    class="relative text-lg font-semibold text-slate-800 hover:text-sky-800 hover:underline"
+                  >
+                    {post.data.title}
+                    <div class="ftw-dot absolute top-1.5 h-4 w-4 rounded-full border-2 border-purple-600/20 bg-purple-100" />
+                  </a>
+                </div>
+                <p class="text-slate-700">{post.data.blurb}</p>
+                <span class="hidden text-slate-500">
+                  {post.data.date.toLocaleDateString("en-US", {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                  })}
+                </span>
+              </Fragment>
+            )}
+            {post.type === "project" && (
+              <Fragment>
+                <div class="flex items-center gap-2 ">
+                  <a
+                    href={`/projects/${post.slug}`}
+                    class="relative text-lg font-semibold text-slate-800 hover:text-sky-800 hover:underline"
+                  >
+                    {post.data.name}
+                    <img
+                      src={post.data.logo}
+                      class="hidden"
+                      style={{ height: "18px", margin: "5px 0" }}
+                    />
+                    <div class="ftw-dot absolute top-1.5 h-4 w-4 rounded-full border-2 border-amber-600/20 bg-amber-100" />
+                  </a>
+                </div>
+                <p class="text-slate-700">{post.data.description}</p>
+              </Fragment>
+            )}
           </li>
         ))
       }

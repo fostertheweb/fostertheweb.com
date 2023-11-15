@@ -1,0 +1,13 @@
+---
+import About from "../components/About.astro";
+---
+
+<main>
+  <section class="flex flex-col gap-6 py-4 text-slate-900">
+    <slot />
+  </section>
+
+  <div class="my-6 h-px w-full bg-slate-200"></div>
+
+  <About />
+</main>
