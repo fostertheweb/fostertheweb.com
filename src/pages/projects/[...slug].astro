@@ -12,6 +12,7 @@ export async function getStaticPaths() {
 }
 
 const { entry } = Astro.props;
+const { Content } = await entry.render();
 const githubUrl = new URL(entry.data.repo);
 const readmeUrl = `https://raw.githubusercontent.com${githubUrl.pathname}/main/README.md`;
 const response = await fetch(readmeUrl);
@@ -31,5 +32,9 @@ const content = marked.parse(markdown);
     </div>
   </header>
 
+  <p>{entry.data.description}</p>
+
   <article set:html={content} />
+
+  <Content />
 </Layout>
