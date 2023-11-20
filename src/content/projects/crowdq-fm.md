@@ -1,7 +1,7 @@
 ---
 name: crowdq.fm
 layout: ../../layouts/ProjectLayout.astro
-description: social play queue
+description: Collaborative Spotify and YouTube play queue
 logo: /images/crowdq-fm.svg
 repo: https://github.com/fostertheweb/crowdq.fm
 ---

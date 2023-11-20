@@ -18,6 +18,10 @@ const readmeUrl = `https://raw.githubusercontent.com${githubUrl.pathname}/main/R
 const response = await fetch(readmeUrl);
 const markdown = await response.text();
 const content = marked.parse(markdown);
+
+// TODO: link to repo
+// TODO: link to live project
+// TODO: load last commit
 ---
 
 <Layout title={entry.data.name}>
@@ -32,9 +36,16 @@ const content = marked.parse(markdown);
     </div>
   </header>
 
-  <p>{entry.data.description}</p>
-
   <article set:html={content} />
 
   <Content />
 </Layout>
+
+<style>
+  @font-face {
+    font-family: "Straker";
+    src: local("Straker"), url("/fonts/straker-regular.woff2");
+    font-weight: normal;
+    font-display: swap;
+  }
+</style>
