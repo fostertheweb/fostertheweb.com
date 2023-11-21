@@ -64,6 +64,14 @@ const content = marked.parse(markdown);
     @apply mt-2 list-inside list-disc pl-1;
   }
 
+  .readme ul:has(input[type="checkbox"]) {
+    @apply list-none;
+  }
+
+  .readme ol {
+    @apply mt-4 list-inside list-decimal pl-1;
+  }
+
   .readme ul ul {
     @apply mt-0 pl-4;
   }
@@ -84,8 +92,14 @@ const content = marked.parse(markdown);
     @apply mb-4 mt-2 rounded bg-black/20 p-4 text-sm;
   }
 
-  .readme p > code {
-    @apply rounded-sm bg-black/20 p-1 text-sm;
+  .readme p > code,
+  .readme ol code,
+  .readme ul code {
+    @apply rounded-sm border border-white/10 bg-black/20 px-2 py-1 text-sm;
+  }
+
+  .readme pre code {
+    @apply border-0 bg-transparent p-0;
   }
 
   .readme input {
@@ -95,7 +109,7 @@ const content = marked.parse(markdown);
   }
 
   .readme input::before {
-    @apply dark:invert;
+    @apply mr-1 dark:invert;
     content: "🔜";
   }
 
