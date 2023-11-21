@@ -27,25 +27,80 @@ const content = marked.parse(markdown);
 <Layout title={entry.data.name}>
   <header class="space-y-2 py-4">
     <h1 class="font-serif text-4xl text-slate-800">
-      <img src={entry.data.logo} class="h-6" />
+      <img src={entry.data.logo} class="h-6 dark:invert" />
     </h1>
     <div>
-      <a href="/" class="text-sky-800 underline hover:text-slate-800"
+      <a
+        href="/"
+        class="text-sky-800 underline hover:text-slate-800 dark:text-sky-500 dark:hover:text-sky-600"
         >Jonathan Foster</a
-      ><span class="text-slate-500"> - Last Commit: abcef1234</span>
+      ><span class="text-slate-500 dark:text-slate-400">
+        - Last Commit: abcef1234</span
+      >
     </div>
   </header>
 
-  <article set:html={content} />
+  <article set:html={content} class="readme" />
 
   <Content />
 </Layout>
 
-<style>
+<style is:global>
   @font-face {
     font-family: "Straker";
     src: local("Straker"), url("/fonts/straker-regular.woff2");
     font-weight: normal;
     font-display: swap;
+  }
+  .readme {
+    /* font-family: Georgia, "Times New Roman", Times, serif; */
+  }
+
+  .readme a {
+    @apply text-sky-700 underline hover:text-sky-900 dark:text-sky-500 dark:hover:text-sky-600;
+  }
+
+  .readme ul {
+    @apply mt-2 list-inside list-disc pl-1;
+  }
+
+  .readme ul ul {
+    @apply mt-0 pl-4;
+  }
+
+  .readme h2 {
+    @apply mt-6 font-serif text-xl tracking-wide;
+  }
+
+  .readme h3 {
+    @apply mt-4 font-serif text-lg tracking-wide dark:text-slate-200;
+  }
+
+  .readme p {
+    @apply mt-2;
+  }
+
+  .readme pre {
+    @apply mb-4 mt-2 rounded bg-black/20 p-4 text-sm;
+  }
+
+  .readme p > code {
+    @apply rounded-sm bg-black/20 p-1 text-sm;
+  }
+
+  .readme input {
+    @apply accent-sky-500;
+    accent-color: #0ea5e9 !important;
+    appearance: none;
+  }
+
+  .readme input::before {
+    @apply dark:invert;
+    content: "🔜";
+  }
+
+  .readme input:checked::before {
+    content: "✅";
+    filter: invert(0);
   }
 </style>
