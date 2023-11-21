@@ -11,12 +11,15 @@ dependencies:
   '@astrojs/tailwind':
     specifier: ^5.0.2
     version: 5.0.2(astro@3.3.2)(tailwindcss@3.3.3)
-  '@fontsource/calistoga':
-    specifier: ^5.0.15
-    version: 5.0.15
-  '@fontsource/young-serif':
-    specifier: ^5.0.11
-    version: 5.0.11
+  '@fontsource/ibm-plex-mono':
+    specifier: ^5.0.8
+    version: 5.0.8
+  '@fontsource/ibm-plex-sans':
+    specifier: ^5.0.17
+    version: 5.0.17
+  '@fontsource/ibm-plex-serif':
+    specifier: ^5.0.8
+    version: 5.0.8
   astro:
     specifier: ^3.3.2
     version: 3.3.2
@@ -774,12 +777,16 @@ packages:
     dev: false
     optional: true
 
-  /@fontsource/calistoga@5.0.15:
-    resolution: {integrity: sha512-OWoZsdVQdtcagGdyOIrtH1W5LAtbjktsOmNii9nARg3EhAzhdhZM5Fbq6lOyS/jutMZjtFFyT5JbrBSl6SCWog==}
+  /@fontsource/ibm-plex-mono@5.0.8:
+    resolution: {integrity: sha512-AoR7K2YtlGKy3LApyLYjqjyz0o8XtkRvbB/juMsGSGNayBBAly140ykZls+VxcXjZSLQpp2RyxKo6lYOuHPmUw==}
     dev: false
 
-  /@fontsource/young-serif@5.0.11:
-    resolution: {integrity: sha512-AzNgD0gVNmogYDl23AHeFeIQlBbJVWAuElmZvMnxEeqAcrVXtP2UEtRv7wWM+HM+vkcYIdbT6TmfmHJ1Rm2gsw==}
+  /@fontsource/ibm-plex-sans@5.0.17:
+    resolution: {integrity: sha512-VakeugSZf9MA/bGyMH27Cgwvc0v5lxBlmFKz7xE5ESFprXwMYfttkzRIkPw+B8st90GfsLYrkHOfGcjgdweuRQ==}
+    dev: false
+
+  /@fontsource/ibm-plex-serif@5.0.8:
+    resolution: {integrity: sha512-KUp1E9Wzf2Umhr2SbpcF9HwgFJmuxvKAARmpl7GDDkIG30R1PMFJWxfSfQ7oX/oVBtomGq5RUTaMMUeE0ngEgw==}
     dev: false
 
   /@jridgewell/gen-mapping@0.3.3:

@@ -54,6 +54,7 @@ const content = marked.parse(markdown);
   }
   .readme {
     /* font-family: Georgia, "Times New Roman", Times, serif; */
+    @apply font-serif;
   }
 
   .readme a {
@@ -77,11 +78,11 @@ const content = marked.parse(markdown);
   }
 
   .readme h2 {
-    @apply mt-6 font-serif text-xl tracking-wide;
+    @apply mt-6 font-sans text-xl font-semibold;
   }
 
   .readme h3 {
-    @apply mt-4 font-serif text-lg tracking-wide dark:text-slate-200;
+    @apply mt-4 font-sans text-lg font-semibold dark:text-slate-200;
   }
 
   .readme p {
@@ -89,17 +90,17 @@ const content = marked.parse(markdown);
   }
 
   .readme pre {
-    @apply mb-4 mt-2 rounded bg-black/20 p-4 text-sm;
+    @apply mb-4 mt-2 rounded bg-slate-200/60 p-4 font-mono text-sm dark:bg-black/20;
   }
 
   .readme p > code,
   .readme ol code,
   .readme ul code {
-    @apply rounded-sm border border-white/10 bg-black/20 px-2 py-1 text-sm;
+    @apply rounded border border-sky-400 bg-sky-100 px-1 py-px font-mono text-sm text-sky-900 dark:border-white/10 dark:bg-black/20;
   }
 
   .readme pre code {
-    @apply border-0 bg-transparent p-0;
+    @apply border-0 bg-transparent p-0 font-mono;
   }
 
   .readme input {

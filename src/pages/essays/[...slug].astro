@@ -24,8 +24,8 @@ const options = {
 
 <Layout title={entry.data.title}>
   <header class="space-y-2 py-4">
-    <h1 class="font-serif text-4xl text-slate-800">{entry.data.title}</h1>
-    <div>
+    <h1 class="font-sans text-3xl text-slate-800">{entry.data.title}</h1>
+    <div class="font-sans">
       <a href="/" class="text-sky-800 underline hover:text-slate-800"
         >Jonathan Foster</a
       ><span class="text-slate-500">
@@ -33,5 +33,8 @@ const options = {
       >
     </div>
   </header>
-  <Content />
+
+  <article class="font-serif text-slate-900">
+    <Content />
+  </article>
 </Layout>
