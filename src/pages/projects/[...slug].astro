@@ -103,13 +103,13 @@ const content = marked.parse(markdown);
   }
 
   .readme pre.shiki {
-    @apply mb-4 mt-2 rounded p-4 font-mono text-sm;
+    @apply mb-4 mt-2 rounded border border-black/10 p-4 font-mono text-sm dark:border-white/10;
   }
 
   .readme p > code,
   .readme ol code,
   .readme ul code {
-    @apply rounded border border-rainee-400 bg-rainee-100 px-1 py-px font-mono text-sm text-rainee-900 dark:border-white/10 dark:bg-black/20 dark:text-rainee-300;
+    @apply rounded border-0 border-rainee-400 bg-zinc-200/60 px-1 py-px font-mono text-sm text-rainee-700 dark:border-white/10 dark:bg-black/20 dark:text-rainee-300;
   }
 
   .readme pre code {
