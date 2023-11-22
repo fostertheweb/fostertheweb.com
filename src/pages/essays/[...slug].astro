@@ -24,17 +24,21 @@ const options = {
 
 <Layout title={entry.data.title}>
   <header class="space-y-2 py-4">
-    <h1 class="font-sans text-3xl text-slate-800">{entry.data.title}</h1>
-    <div class="font-sans">
-      <a href="/" class="text-sky-800 underline hover:text-slate-800"
+    <h1 class="font-sans text-3xl font-bold text-zinc-800 dark:text-zinc-200">
+      {entry.data.title}
+    </h1>
+    <div class="font-sans text-sm">
+      <a
+        href="/"
+        class="text-rainee-800 dark:text-rainee-300 dark:hover:text-rainee-400 underline hover:text-zinc-800"
         >Jonathan Foster</a
-      ><span class="text-slate-500">
+      ><span class="text-zinc-500 dark:text-zinc-400">
         - {entry.data.date.toLocaleDateString("en-US", options)}</span
       >
     </div>
   </header>
 
-  <article class="font-serif text-slate-900">
+  <article class="font-serif text-zinc-900">
     <Content />
   </article>
 </Layout>

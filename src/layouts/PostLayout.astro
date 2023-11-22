@@ -3,14 +3,16 @@ import About from "../components/About.astro";
 ---
 
 <main>
-  <section class="flex flex-col gap-6 py-4 text-slate-900">
+  <section class="flex flex-col gap-6 py-4 text-zinc-900 dark:text-zinc-200">
     <slot />
   </section>
 
-  <div class="my-6 h-px w-full bg-slate-200"></div>
+  <div class="my-6 h-px w-full bg-zinc-200 dark:bg-zinc-700"></div>
 
   <section class="py-4">
-    <blockquote class="border-l-2 border-slate-500 pl-2 text-slate-500">
+    <blockquote
+      class="border-l-2 border-zinc-500 pl-2 font-sans text-zinc-500 dark:border-zinc-400 dark:text-zinc-400"
+    >
       No AI or LLMs were used in the process of writing this post.
     </blockquote>
   </section>
