@@ -1,6 +1,9 @@
 ---
 import { getCollection } from "astro:content";
-import { marked } from "marked";
+import { Marked } from "marked";
+// @ts-ignore
+import { markedHighlight } from "marked-highlight";
+import { codeToHtml } from "shikiji";
 import Layout from "../../layouts/Layout.astro";
 
 export async function getStaticPaths() {
@@ -17,6 +20,22 @@ const githubUrl = new URL(entry.data.repo);
 const readmeUrl = `https://raw.githubusercontent.com${githubUrl.pathname}/main/README.md`;
 const response = await fetch(readmeUrl);
 const markdown = await response.text();
+const marked = new Marked(
+  markedHighlight({
+    async: true,
+    langPrefix: "language-",
+    highlight(input: string, lang: string) {
+      const code = codeToHtml(input, {
+        lang,
+        themes: {
+          light: "github-light",
+          dark: "github-dark",
+        },
+      });
+      return code;
+    },
+  }),
+);
 const content = marked.parse(markdown);
 
 // TODO: link to repo
@@ -32,7 +51,7 @@ const content = marked.parse(markdown);
     <div class="text-sm">
       <a
         href="/"
-        class="text-rainee-800 dark:text-rainee-300 dark:hover:text-rainee-400 underline hover:text-zinc-800"
+        class="text-rainee-800 underline hover:text-zinc-800 dark:text-rainee-300 dark:hover:text-rainee-400"
         >Jonathan Foster</a
       ><span class="text-zinc-500 dark:text-zinc-400">
         - Last Commit: abcef1234</span
@@ -52,7 +71,7 @@ const content = marked.parse(markdown);
   }
 
   .readme a {
-    @apply text-rainee-700 hover:text-rainee-900 dark:text-rainee-300 dark:hover:text-rainee-400 underline;
+    @apply text-rainee-700 underline hover:text-rainee-900 dark:text-rainee-300 dark:hover:text-rainee-400;
   }
 
   .readme ul {
@@ -83,14 +102,14 @@ const content = marked.parse(markdown);
     @apply mt-2;
   }
 
-  .readme pre {
-    @apply mb-4 mt-2 rounded bg-zinc-200/60 p-4 font-mono text-sm dark:bg-black/20;
+  .readme pre.shiki {
+    @apply mb-4 mt-2 rounded p-4 font-mono text-sm;
   }
 
   .readme p > code,
   .readme ol code,
   .readme ul code {
-    @apply border-rainee-400 bg-rainee-100 text-rainee-900 dark:text-rainee-300 rounded border px-1 py-px font-mono text-sm dark:border-white/10 dark:bg-black/20;
+    @apply rounded border border-rainee-400 bg-rainee-100 px-1 py-px font-mono text-sm text-rainee-900 dark:border-white/10 dark:bg-black/20 dark:text-rainee-300;
   }
 
   .readme pre code {
