@@ -7,6 +7,7 @@ module.exports = {
         serif: ["Wremena", "Georgia", "serif"],
         sans: ["Gangster Grotesk", "sans-serif"],
         mono: ["Cascadia Code", "Consolas", "Menlo", "monospace"],
+        straker: ["Straker", "serif"],
       },
       colors: {
         rainee: {
