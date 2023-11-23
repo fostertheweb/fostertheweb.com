@@ -14,10 +14,27 @@ export async function getStaticPaths() {
   }));
 }
 
+async function getMostRecentCommit(owner: string, repo: string) {
+  const apiUrl = `https://api.github.com/repos/${owner}/${repo}/commits/main`;
+
+  const response = await fetch(apiUrl, {
+    headers: {
+      Accept: "application/vnd.github.v3+json",
+    },
+  });
+
+  const data = await response.json();
+  const { sha, html_url: url } = data;
+
+  return { sha, url };
+}
+
 const { entry } = Astro.props;
 const { Content } = await entry.render();
 const githubUrl = new URL(entry.data.repo);
 const readmeUrl = `https://raw.githubusercontent.com${githubUrl.pathname}/main/README.md`;
+const [owner, repo] = githubUrl.pathname.split("/").slice(1, 3);
+const mostRecentCommit = await getMostRecentCommit(owner, repo);
 const response = await fetch(readmeUrl);
 const markdown = await response.text();
 const marked = new Marked(
@@ -27,10 +44,7 @@ const marked = new Marked(
     highlight(input: string, lang: string) {
       const code = codeToHtml(input, {
         lang,
-        themes: {
-          light: "github-light",
-          dark: "github-dark",
-        },
+        theme: "dark-plus",
       });
       return code;
     },
@@ -48,13 +62,17 @@ const content = marked.parse(markdown);
     <h1 class="font-serif text-4xl text-zinc-800">
       <img src={entry.data.logo} class="h-6 dark:invert" />
     </h1>
-    <div class="text-sm">
+    <div class="text-base">
       <a
         href="/"
         class="text-rainee-800 underline hover:text-zinc-800 dark:text-rainee-300 dark:hover:text-rainee-400"
         >Jonathan Foster</a
       ><span class="text-zinc-500 dark:text-zinc-400">
-        - Last Commit: abcef1234</span
+        - Last Commit: <a
+          href={mostRecentCommit.url}
+          class="underline dark:hover:text-zinc-500"
+          >{mostRecentCommit.sha.slice(0, 16)}</a
+        ></span
       >
     </div>
   </header>
@@ -66,8 +84,7 @@ const content = marked.parse(markdown);
 
 <style is:global>
   .readme {
-    /* font-family: Georgia, "Times New Roman", Times, serif; */
-    @apply font-serif;
+    @apply font-sans text-base text-zinc-300;
   }
 
   .readme a {
@@ -99,11 +116,11 @@ const content = marked.parse(markdown);
   }
 
   .readme p {
-    @apply mt-2;
+    @apply mt-4;
   }
 
   .readme pre.shiki {
-    @apply mb-4 mt-2 rounded border border-black/10 p-4 font-mono text-sm dark:border-white/10;
+    @apply mb-4 mt-2 rounded border border-black/10 p-4 font-mono text-sm shadow-sm dark:border-white/5;
   }
 
   .readme p > code,
