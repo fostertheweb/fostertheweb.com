@@ -59,22 +59,16 @@ const content = marked.parse(markdown);
 
 <Layout title={entry.data.name}>
   <header class="space-y-2 py-4">
-    <h1 class="font-sans text-4xl font-bold text-zinc-800 dark:text-zinc-300">
-      <img
-        src={entry.data.logo_light}
-        alt={entry.data.name}
-        class="h-8 dark:hidden"
-      />
-      <img
-        src={entry.data.logo_dark}
-        alt={entry.data.name}
-        class="hidden h-8 dark:block"
-      />
-    </h1>
+    <img
+      class="shadow/20 rounded-md"
+      srcset={`${entry.data.header_image}, ${entry.data.header_image_2x} 2x`}
+      src={entry.data.header_image}
+      alt={entry.data.name}
+    />
     <div class="text-base">
       <a
         href="/"
-        class="text-rainee-500 underline hover:text-rainee-600 dark:text-rainee-400 dark:hover:text-rainee-500"
+        class="text-emerald-500 underline hover:text-emerald-600 dark:text-emerald-200 dark:hover:text-emerald-300"
         >Jonathan Foster</a
       ><span class="text-zinc-500 dark:text-zinc-400">
         - Last Commit: <a
@@ -97,7 +91,7 @@ const content = marked.parse(markdown);
   }
 
   .readme a {
-    @apply text-rainee-500 underline hover:text-rainee-600 dark:text-rainee-300 dark:hover:text-rainee-400;
+    @apply text-emerald-400 underline hover:text-emerald-500 dark:text-emerald-200 dark:hover:text-emerald-300;
   }
 
   .readme ul {
@@ -135,7 +129,7 @@ const content = marked.parse(markdown);
   .readme p > code,
   .readme ol code,
   .readme ul code {
-    @apply rounded border-0 border-rainee-400 bg-zinc-200/60 px-1 py-px font-mono text-sm text-rainee-700 dark:border-white/10 dark:bg-black/20 dark:text-rainee-300;
+    @apply rounded border-0 border-emerald-400 bg-zinc-200/60 px-1 py-px font-mono text-sm text-emerald-700 dark:border-white/10 dark:bg-black/20 dark:text-emerald-300;
   }
 
   .readme pre code {
@@ -143,7 +137,7 @@ const content = marked.parse(markdown);
   }
 
   .readme input {
-    @apply accent-rainee-500;
+    @apply accent-emerald-500;
     accent-color: #0ea5e9 !important;
     appearance: none;
   }
