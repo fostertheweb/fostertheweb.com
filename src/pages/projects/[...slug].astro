@@ -34,6 +34,7 @@ const { Content } = await entry.render();
 const githubUrl = new URL(entry.data.repo);
 const readmeUrl = `https://raw.githubusercontent.com${githubUrl.pathname}/main/README.md`;
 const [owner, repo] = githubUrl.pathname.split("/").slice(1, 3);
+// TODO: this needs to run on the client to be up to date
 const mostRecentCommit = await getMostRecentCommit(owner, repo);
 const response = await fetch(readmeUrl);
 const markdown = await response.text();
@@ -68,7 +69,7 @@ const content = marked.parse(markdown);
     <div class="text-base">
       <a
         href="/"
-        class="text-emerald-500 underline hover:text-emerald-600 dark:text-emerald-200 dark:hover:text-emerald-300"
+        class="text-emerald-600 underline hover:text-emerald-700 dark:text-emerald-200 dark:hover:text-emerald-300"
         >Jonathan Foster</a
       ><span class="text-zinc-500 dark:text-zinc-400">
         - Last Commit: <a
@@ -91,7 +92,7 @@ const content = marked.parse(markdown);
   }
 
   .readme a {
-    @apply text-emerald-400 underline hover:text-emerald-500 dark:text-emerald-200 dark:hover:text-emerald-300;
+    @apply text-emerald-600 underline hover:text-emerald-700 dark:text-emerald-200 dark:hover:text-emerald-300;
   }
 
   .readme ul {
@@ -138,17 +139,5 @@ const content = marked.parse(markdown);
 
   .readme input {
     @apply accent-emerald-500;
-    accent-color: #0ea5e9 !important;
-    appearance: none;
-  }
-
-  .readme input::before {
-    @apply mr-1 dark:invert;
-    content: "🔜";
-  }
-
-  .readme input:checked::before {
-    content: "✅";
-    filter: invert(0);
   }
 </style>
