@@ -1,5 +1,5 @@
 ---
-import About from "../components/About.astro";
+import ExternalLink from "../components/ExternalLink.astro";
 ---
 
 <main>
@@ -9,5 +9,29 @@ import About from "../components/About.astro";
 
   <div class="my-6 h-px w-full bg-zinc-200 dark:bg-zinc-700"></div>
 
-  <About />
+  <div class="flex flex-col items-center gap-2 py-4 text-base sm:flex-row">
+    <img
+      src="/images/memoji-laptop.png"
+      alt="memoji"
+      class="h-12 rounded bg-[#b7c8b2]"
+    />
+    <div>
+      <p
+        class="flex items-center gap-2 font-sans text-zinc-800 dark:text-emerald-300"
+      >
+        Thanks for stopping by!
+      </p>
+
+      <p
+        class="flex items-center gap-2 font-sans text-zinc-800 dark:text-zinc-300"
+      >
+        You can see everything else I'm working on currently on <a
+          href="https://github.com/fostertheweb"
+          class="inline-flex items-center gap-1 text-zinc-800 hover:text-emerald-700 dark:text-emerald-100 dark:hover:text-emerald-200"
+          >GitHub
+          <ExternalLink />
+        </a>
+      </p>
+    </div>
+  </div>
 </main>
