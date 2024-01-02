@@ -4,6 +4,7 @@ export interface Props {
 }
 
 import "@fontsource/calistoga";
+import ExternalLink from "../components/ExternalLink.astro";
 
 const { title } = Astro.props;
 ---
@@ -18,8 +19,48 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body
-    class="mx-auto w-full max-w-screen-sm bg-zinc-50 p-4 text-zinc-900 dark:bg-zinc-800 dark:text-zinc-300"
+    class="mx-auto w-full max-w-3xl bg-zinc-50 p-4 text-zinc-900 dark:bg-zinc-800 dark:text-zinc-300"
   >
+    <header class="pb-4 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-2">
+      <img src="/images/memoji-2.png" alt="memoji" class="h-12 rounded" />
+      <div class="flex flex-col">
+      <h2 class="font-semibold text-emerald-800 text-xl dark:text-emerald-300">
+        Jonathan Foster
+      </h2>
+      <h2 class="text-zinc-500 text-base dark:text-emerald-300">
+        @fostertheweb
+      </h2>
+      </div>
+    </a>
+
+    <ul class="flex gap-6 font-sans text-zinc-800 dark:text-emerald-100">
+      <li class="flex items-center gap-1">
+        <a
+          href="https://github.com/fostertheweb"
+          class="hover:text-emerald-700 dark:hover:text-emerald-200"
+          >GitHub</a
+        >
+        <ExternalLink />
+      </li>
+      <li class="flex items-center gap-1">
+        <a
+          href="https://twitter.com/fostertheweb"
+          class="hover:text-emerald-700 dark:hover:text-emerald-200"
+          >Twitter</a
+        >
+        <ExternalLink />
+      </li>
+      <li class="flex items-center gap-1">
+        <a
+          href="https://linkedin.com/in/fostertheweb"
+          class="hover:text-emerald-700 dark:hover:text-emerald-200"
+          >LinkedIn</a
+        >
+        <ExternalLink />
+      </li>
+    </ul>
+    </header>
     <slot />
   </body>
 </html>

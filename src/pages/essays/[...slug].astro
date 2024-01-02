@@ -22,17 +22,13 @@ const { Content } = await entry.render();
       {entry.data.title}
     </h1>
     <div class="font-sans text-base">
-      <a
-        href="/"
-        class="text-emerald-600 underline hover:text-emerald-700 dark:text-emerald-200 dark:hover:text-emerald-300"
-        >Jonathan Foster</a
-      ><span class="text-zinc-500 dark:text-zinc-400">
-        - Last Updated: {entry.data.date.toISOString()}</span
-      >
+      <span class="text-zinc-500 dark:text-zinc-400">
+        Last Updated: {entry.data.date.toISOString()}
+      </span>
     </div>
   </header>
 
-  <article class="essay font-serif text-lg leading-8 text-zinc-900">
+  <article class="essay font-sans text-lg leading-8 text-zinc-900">
     <Content />
   </article>
 </Layout>

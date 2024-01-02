@@ -61,18 +61,14 @@ const content = marked.parse(markdown);
 <Layout title={entry.data.name}>
   <header class="space-y-2 py-4">
     <img
-      class="shadow/20 rounded-md"
+      class="rounded-lg"
       srcset={`${entry.data.header_image}, ${entry.data.header_image_2x} 2x`}
       src={entry.data.header_image}
       alt={entry.data.name}
     />
     <div class="text-base">
-      <a
-        href="/"
-        class="text-emerald-600 underline hover:text-emerald-700 dark:text-emerald-200 dark:hover:text-emerald-300"
-        >Jonathan Foster</a
-      ><span class="text-zinc-500 dark:text-zinc-400">
-        - Last Commit: <a
+      <span class="text-zinc-500 dark:text-zinc-400">
+        Last Commit: <a
           href={mostRecentCommit.url}
           class="underline dark:hover:text-zinc-500"
           >{mostRecentCommit.sha.slice(0, 16)}</a
