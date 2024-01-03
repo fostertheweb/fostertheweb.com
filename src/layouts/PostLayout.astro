@@ -1,5 +1,5 @@
 ---
-import About from "../components/About.astro";
+import ExternalLink from "../components/ExternalLink.astro";
 ---
 
 <main>
@@ -17,12 +17,26 @@ import About from "../components/About.astro";
     </blockquote>
   </section>
 
-  <div class="flex items-center gap-2">
+  <div class="flex flex-col items-center gap-2 py-4 text-base sm:flex-row">
     <img
-      src="/images/memoji-pose.png"
+      src="/images/memoji-hand.png"
       alt="memoji"
       class="h-12 rounded bg-[#b7c8b2]"
     />
-    <About />
+    <div>
+      <p
+        class="flex items-center gap-2 font-sans text-zinc-800 dark:text-emerald-300"
+      >
+        Did you really read all of that?
+      </p>
+
+      <p class="font-sans text-zinc-800 dark:text-zinc-300">
+        Let me know how wrong I am over on <a
+          href="https://twitter.com/fostertheweb"
+          class="inline-flex items-center gap-1 text-zinc-800 hover:text-emerald-700 dark:text-emerald-100 dark:hover:text-emerald-200"
+          >Twitter <ExternalLink />
+        </a>
+      </p>
+    </div>
   </div>
 </main>
