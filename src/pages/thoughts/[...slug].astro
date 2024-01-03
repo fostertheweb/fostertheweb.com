@@ -3,7 +3,7 @@ import { getCollection } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
 
 export async function getStaticPaths() {
-  const posts = await getCollection("essays");
+  const posts = await getCollection("thoughts");
   return posts.map((entry) => ({
     params: { slug: entry.slug },
     props: { entry },
@@ -28,23 +28,23 @@ const { Content } = await entry.render();
     </div>
   </header>
 
-  <article class="essay font-sans text-lg leading-8 text-zinc-900">
+  <article class="post font-sans text-lg leading-8 text-zinc-900">
     <Content />
   </article>
 </Layout>
 
 <style is:global>
-  .essay pre {
+  .post pre {
     @apply mt-2 rounded border border-black/10 p-4 font-mono text-sm shadow-sm dark:border-white/5;
   }
 
-  .essay p > code,
-  .essay ol code,
-  .essay ul code {
+  .post p > code,
+  .post ol code,
+  .post ul code {
     @apply rounded border-0 border-emerald-400 bg-zinc-200/60 px-1 py-px font-mono text-sm text-emerald-700 dark:border-white/10 dark:bg-black/20 dark:text-emerald-300;
   }
 
-  .essay pre code {
+  .post pre code {
     @apply border-0 bg-transparent p-0 font-mono;
   }
 </style>

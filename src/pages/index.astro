@@ -3,11 +3,11 @@ import { getCollection } from "astro:content";
 import About from "../components/About.astro";
 import Layout from "../layouts/Layout.astro";
 
-const essays = await getCollection("essays");
+const thoughts = await getCollection("thoughts");
 const projects = await getCollection("projects");
 
 const content = [
-  ...essays.map((essay) => ({ ...essay, type: "essay" })),
+  ...thoughts.map((post) => ({ ...post, type: "thoughts" })),
   ...projects.map((project) => ({ ...project, type: "project" })),
 ];
 
@@ -29,7 +29,7 @@ const feed = content.sort((a, b) => a.data.date - b.data.date);
       <div class="flex items-center gap-2 pb-2 font-sans">
         <a
           href="#essay"
-          class="rounded-sm border-0 border-l-4 border-purple-600/20 bg-purple-100 px-3 py-1 text-xs font-bold text-purple-900 dark:border-purple-300 dark:bg-purple-500/20 dark:text-purple-300"
+          class="hidden rounded-sm border-0 border-l-4 border-purple-600/20 bg-purple-100 px-3 py-1 text-xs font-bold text-purple-900 dark:border-purple-300 dark:bg-purple-500/20 dark:text-purple-300"
         >
           Essay
         </a>
@@ -40,10 +40,10 @@ const feed = content.sort((a, b) => a.data.date - b.data.date);
           Project
         </a>
         <a
-          href="#thought"
+          href="#thoughts"
           class="rounded-sm border-0 border-l-4 border-sky-600/20 bg-sky-100 px-3 py-1 text-xs font-bold text-sky-900 dark:border-sky-300 dark:bg-sky-500/20 dark:text-sky-300"
         >
-          Thought
+          Thoughts
         </a>
         <a
           href="#snippet"
@@ -58,16 +58,16 @@ const feed = content.sort((a, b) => a.data.date - b.data.date);
       {
         feed.map((post) => (
           <li class="flex flex-col gap-1 py-4">
-            {post.type === "essay" && (
+            {post.type === "thoughts" && (
               <Fragment>
                 <div class="flex items-center gap-2 ">
                   <a
-                    href={`/essays/${post.slug}`}
+                    href={`/thoughts/${post.slug}`}
                     class="relative font-sans text-xl font-bold text-zinc-800 hover:text-emerald-800 hover:underline dark:text-zinc-300 dark:hover:text-emerald-200"
                   >
                     {post.data.title}
                     <div class="ftw-background absolute top-1.5 h-4 w-4 bg-zinc-50 dark:bg-zinc-800" />
-                    <div class="ftw-dot absolute top-1.5 h-4 w-4 rounded-full border-2 border-purple-600/20 bg-purple-100 bg-blend-exclusion shadow-purple-500/30 dark:border-purple-400 dark:bg-purple-500/25 dark:shadow" />
+                    <div class="ftw-dot absolute top-1.5 h-4 w-4 rounded-full border-2 border-sky-600/20 bg-sky-100 bg-blend-exclusion shadow-sky-500/30 dark:border-sky-400 dark:bg-sky-500/25 dark:shadow" />
                   </a>
                 </div>
                 <p class="font-sans text-base text-zinc-700 dark:text-zinc-400">
