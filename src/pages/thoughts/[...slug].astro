@@ -1,6 +1,10 @@
 ---
 import { getCollection } from "astro:content";
+import dayjs from "dayjs";
+import utc from "dayjs/plugin/utc";
 import Layout from "../../layouts/Layout.astro";
+
+dayjs.extend(utc);
 
 export async function getStaticPaths() {
   const posts = await getCollection("thoughts");
@@ -11,9 +15,11 @@ export async function getStaticPaths() {
 }
 
 const { entry } = Astro.props;
-const { Content } = await entry.render();
+const { Content, remarkPluginFrontmatter } = await entry.render();
 
-// TODO: load last modified date for "Last Update" timestamp
+const lastModified = dayjs(remarkPluginFrontmatter.lastModified)
+  .utc()
+  .format("YYYY-MM-DD HH:mm:ss UTC");
 ---
 
 <Layout title={entry.data.title}>
@@ -23,7 +29,7 @@ const { Content } = await entry.render();
     </h1>
     <div class="font-sans text-base">
       <span class="text-zinc-500 dark:text-zinc-400">
-        Last Updated: {entry.data.date.toISOString()}
+        Last Updated: {lastModified}
       </span>
     </div>
   </header>
