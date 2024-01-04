@@ -73,13 +73,6 @@ const feed = content.sort((a, b) => a.data.date - b.data.date);
                 <p class="font-sans text-base text-zinc-700 dark:text-zinc-400">
                   {post.data.blurb}
                 </p>
-                <span class="hidden text-zinc-500">
-                  {post.data.date.toLocaleDateString("en-US", {
-                    year: "numeric",
-                    month: "long",
-                    day: "numeric",
-                  })}
-                </span>
               </Fragment>
             )}
             {post.type === "project" && (
