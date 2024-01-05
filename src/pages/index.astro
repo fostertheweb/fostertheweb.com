@@ -3,11 +3,11 @@ import { getCollection } from "astro:content";
 import About from "../components/About.astro";
 import Layout from "../layouts/Layout.astro";
 
-// const thoughts = (await getCollection("thoughts")) || [];
+const thoughts = await getCollection("thoughts");
 const projects = await getCollection("projects");
 
 const content = [
-  // ...thoughts.map((post) => post  ({ ...post, type: "thoughts" })),
+  ...thoughts.map((post) => ({ ...post, type: "thoughts" })),
   ...projects.map((project) => ({ ...project, type: "project" })),
 ];
 
