@@ -20,7 +20,7 @@ const transformContent = content.map(async (entry) => {
 });
 const contentWithLastModified = await Promise.all(transformContent);
 const feed = contentWithLastModified.sort(
-  (a, b) => a.lastModified - b.lastModified,
+  (a, b) => b.lastModified - a.lastModified,
 );
 ---
 
