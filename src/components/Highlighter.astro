@@ -10,21 +10,20 @@ function highlight(text: string) {
   let highlighted = text;
 
   words.forEach((word) => {
-    if (text.match(word)) {
-      highlighted = text.replace(
-        word,
-        `<span class="highlight">${word}</span>`,
-      );
-    }
+    const regex = new RegExp(`\\b${word}\\b`, "gi");
+    highlighted = highlighted.replace(
+      regex,
+      `<span class="highlight">${word}</span>`,
+    );
   });
 
   return highlighted;
 }
 ---
 
-<div set:html={highlight(text)} />
-<style>
+<div class="inline" set:html={highlight(text)} />
+<style is:global>
   .highlight {
-    color: #0077aa;
+    color: #0077aa !important;
   }
 </style>

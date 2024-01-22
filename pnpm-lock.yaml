@@ -17,6 +17,9 @@ dependencies:
   '@fontsource/calistoga':
     specifier: ^5.0.17
     version: 5.0.17
+  '@fontsource/inter':
+    specifier: ^5.0.16
+    version: 5.0.16
   astro:
     specifier: ^4.1.0
     version: 4.1.0
@@ -607,6 +610,10 @@ packages:
 
   /@fontsource/calistoga@5.0.17:
     resolution: {integrity: sha512-SGdncnxPW6tIcu8FR6jadfo74qOZ+6vcNXC1u+W9Zdh+a1Ne6TtZZoAQ0sjU1fRJ5/W3vw6uCqi80YFa2BR45w==}
+    dev: false
+
+  /@fontsource/inter@5.0.16:
+    resolution: {integrity: sha512-qF0aH5UiZvCmneX5orJbVRoc2VTyLTV3X/7laMp03Qt28L+B9tFlZODOGUL64wDWc69YVdi1LeJB0cIgd51lvw==}
     dev: false
 
   /@img/sharp-darwin-arm64@0.33.1:

@@ -16,6 +16,8 @@ import MapIcon from "./MapIcon.astro";
 const { company, title, when, location, summary } = Astro.props;
 
 const BUZZWORDS = [
+  "Angular",
+  "Flow",
   "npm",
   "webpack",
   "React",
@@ -43,77 +45,29 @@ const BUZZWORDS = [
 ];
 ---
 
-<div class="container">
-  <div>
-    <div class="company">{company}</div>
-    <div class="detail">
+<div class="mx-auto flex items-baseline gap-12">
+  <div class="flex w-[2.5in] flex-col items-start gap-1">
+    <div class="text-lg font-bold">{company}</div>
+    <div class="flex items-center gap-0">
       <IdIcon />
       {title}
     </div>
-    <div class="detail">
+    <div class="flex items-center gap-0">
       <CalendarIcon />
       {when}
     </div>
-    <div class="detail">
+    <div class="flex items-center gap-0">
       <MapIcon />
       {location}
     </div>
   </div>
-  <div class="summary">
-    <ul>
-      {
-        summary.map((bullet) => (
-          <li>
-            <Highlighter words={BUZZWORDS} text={bullet} />
-          </li>
-        ))
-      }
-    </ul>
-  </div>
+  <ul class="mt-2 w-[6in] list-outside list-disc space-y-1 pl-4">
+    {
+      summary.map((bullet) => (
+        <li>
+          <Highlighter words={BUZZWORDS} text={bullet} />
+        </li>
+      ))
+    }
+  </ul>
 </div>
-<style>
-  .container {
-    width: 100%;
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    margin-top: 1rem;
-    padding-top: 1rem;
-  }
-
-  .summary {
-    width: 5.4in;
-    font-size: 15px;
-  }
-
-  .summary ul {
-    margin: 0;
-    padding: 0;
-  }
-
-  .summary ul li {
-    margin-top: 0.45rem;
-    list-style: outside;
-  }
-
-  .summary ul li:first-child {
-    margin-top: 0;
-  }
-
-  .company {
-    font-weight: bold;
-    font-size: 18px;
-    margin-bottom: 0.2rem;
-  }
-
-  .detail {
-    display: flex;
-    align-items: center;
-    font-size: 15px;
-    color: #696969;
-  }
-
-  .highlight {
-    color: #0077aa;
-  }
-</style>
