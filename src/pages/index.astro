@@ -21,7 +21,7 @@ const feed = content.sort((a, b) => a.data.date - b.data.date);
 
   <section class="pl-1 pt-6">
     <div
-      class="flex flex-col items-center justify-between border-b-0 border-l-2 border-dashed border-zinc-200 pb-3 pl-6 pt-1 dark:border-zinc-600 sm:flex-row sm:items-center"
+      class="flex flex-col justify-between gap-2 border-b-0 border-l-2 border-dashed border-zinc-200 pb-3 pl-6 pt-1 dark:border-zinc-600 sm:flex-row sm:items-center sm:gap-0"
     >
       <h2
         class="font-sans text-2xl font-bold text-zinc-600 dark:border-zinc-500 dark:text-zinc-300"
@@ -90,8 +90,8 @@ const feed = content.sort((a, b) => a.data.date - b.data.date);
                       class="hidden"
                       style={{ height: "18px", margin: "5px 0" }}
                     />
-                    <div class="ftw-background absolute top-1.5 h-4 w-4 bg-zinc-50 dark:bg-zinc-800" />
-                    <div class="ftw-dot absolute top-1.5 h-4 w-4 rounded-full border-2 border-orange-600/25 bg-orange-100 shadow-orange-500/30 dark:border-orange-400 dark:bg-orange-500/20 dark:shadow" />
+                    <div class="ftw-background absolute h-4 w-4 bg-zinc-50 dark:bg-zinc-800" />
+                    <div class="ftw-dot absolute h-4 w-4 rounded-full border-2 border-orange-600/25 bg-orange-100 shadow-orange-500/30 dark:border-orange-400 dark:bg-orange-500/20 dark:shadow" />
                   </a>
                 </div>
                 <p class="font-sans text-base text-zinc-700 dark:text-zinc-400">
@@ -113,6 +113,7 @@ const feed = content.sort((a, b) => a.data.date - b.data.date);
 <style>
   .ftw-dot,
   .ftw-background {
+    top: 0.45rem;
     left: calc(-2rem + -1px);
   }
 </style>

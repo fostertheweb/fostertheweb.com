@@ -54,10 +54,6 @@ const marked = new Marked(
   }),
 );
 const content = marked.parse(markdown);
-
-// TODO: link to repo
-// TODO: link to live project
-// TODO: load last commit
 ---
 
 <Layout title={entry.data.name}>
@@ -69,9 +65,11 @@ const content = marked.parse(markdown);
       alt={entry.data.name}
     />
     <div
-      class="flex items-center justify-between text-base text-zinc-500 dark:text-zinc-400"
+      class="flex flex-col justify-between gap-1 text-base text-zinc-500 dark:text-zinc-400 md:flex-row md:items-center md:gap-0"
     >
-      <div class="flex items-center gap-4 text-zinc-800 dark:text-emerald-100">
+      <div
+        class="flex flex-col gap-1 text-zinc-800 dark:text-emerald-100 md:flex-row md:items-center md:gap-4"
+      >
         <span class="inline-flex items-center gap-1.5">
           <Link />
           <a

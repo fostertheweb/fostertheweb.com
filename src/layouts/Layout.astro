@@ -21,7 +21,9 @@ const { title } = Astro.props;
   <body
     class="mx-auto w-full max-w-2xl bg-zinc-50 p-4 text-zinc-900 dark:bg-zinc-800 dark:text-zinc-300 print:max-w-full print:bg-white print:p-0"
   >
-    <header class="flex items-center justify-between pb-4 print:hidden">
+    <header
+      class="flex flex-col justify-between gap-2 pb-4 print:hidden md:flex-row md:items-center md:gap-0"
+    >
       <a href="/" class="flex items-center gap-2">
         <img src="/images/memoji-2.png" alt="memoji" class="h-12 rounded" />
         <div class="flex flex-col">

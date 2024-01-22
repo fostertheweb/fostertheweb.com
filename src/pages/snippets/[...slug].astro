@@ -1,0 +1,65 @@
+---
+import { getCollection } from "astro:content";
+import dayjs from "dayjs";
+import utc from "dayjs/plugin/utc";
+import Layout from "../../layouts/Layout.astro";
+
+dayjs.extend(utc);
+
+export async function getStaticPaths() {
+  const posts = await getCollection("snippets");
+  return posts.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content, remarkPluginFrontmatter } = await entry.render();
+
+const lastModified = dayjs(remarkPluginFrontmatter.lastModified)
+  .utc()
+  .format("YYYY-MM-DD HH:mm:ss UTC");
+---
+
+<Layout title={entry.data.title}>
+  <header class="space-y-2 py-4">
+    <h1 class="font-sans text-3xl font-bold text-zinc-800 dark:text-zinc-200">
+      {entry.data.title}
+    </h1>
+    <div class="font-sans text-base">
+      <span class="text-zinc-500 dark:text-zinc-400">
+        Last Updated: {lastModified}
+      </span>
+    </div>
+  </header>
+
+  <article class="post font-sans text-lg leading-8 text-zinc-900">
+    <Content />
+  </article>
+</Layout>
+
+<style is:global>
+  .post section a {
+    @apply text-emerald-600 underline hover:text-emerald-700 dark:text-emerald-200 dark:hover:text-emerald-300;
+  }
+
+  .post pre {
+    @apply mt-2 rounded border border-black/10 p-4 font-mono text-sm shadow-sm dark:border-white/5;
+  }
+
+  .post p > code,
+  .post ol code,
+  .post ul code {
+    @apply rounded border-0 border-emerald-400 bg-zinc-200/60 px-1 py-px font-mono text-sm text-emerald-700 dark:border-white/10 dark:bg-black/20 dark:text-emerald-300;
+  }
+
+  .post pre code {
+    @apply border-0 bg-transparent p-0 font-mono;
+  }
+
+  .post ul {
+    list-style: inside;
+    padding-left: 1rem;
+  }
+</style>
