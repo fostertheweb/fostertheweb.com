@@ -48,20 +48,20 @@ const BUZZWORDS = [
 <div class="mx-auto flex items-baseline gap-12">
   <div class="flex w-[2.5in] flex-col items-start gap-1">
     <div class="text-lg font-bold">{company}</div>
-    <div class="flex items-center gap-0">
+    <div class="flex items-center gap-0 text-sm">
       <IdIcon />
       {title}
     </div>
-    <div class="flex items-center gap-0">
+    <div class="flex items-center gap-0 text-sm">
       <CalendarIcon />
       {when}
     </div>
-    <div class="flex items-center gap-0">
+    <div class="flex items-center gap-0 text-sm">
       <MapIcon />
       {location}
     </div>
   </div>
-  <ul class="mt-2 w-[6in] list-outside list-disc space-y-1 pl-4">
+  <ul class="mt-2 w-[6.15in] list-outside list-disc space-y-1 pl-4">
     {
       summary.map((bullet) => (
         <li>
