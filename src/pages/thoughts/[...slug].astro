@@ -25,7 +25,7 @@ const lastModified = dayjs(remarkPluginFrontmatter.lastModified)
 <Layout title={entry.data.title}>
   <header class="space-y-2 py-4">
     <h1
-      class="text-squirrel-800 dark:text-squirrel-200 font-sans text-3xl font-bold"
+      class="font-sans text-3xl font-bold text-squirrel-800 dark:text-squirrel-200"
     >
       {entry.data.title}
     </h1>
@@ -36,14 +36,18 @@ const lastModified = dayjs(remarkPluginFrontmatter.lastModified)
     </div>
   </header>
 
-  <article class="post text-squirrel-900 font-sans text-lg leading-8">
+  <article class="post font-sans text-lg leading-8 text-squirrel-900">
     <Content />
   </article>
 </Layout>
 
 <style is:global>
+  .post blockquote {
+    @apply flex flex-col items-start gap-4 rounded-sm border-l-2 border-sea-200 bg-sea-100 py-4 pl-4 text-sm dark:border-sea-600 dark:bg-sea-700/30;
+  }
+
   .post section a {
-    @apply text-sea-600 hover:text-sea-700 dark:text-sea-200 dark:hover:text-sea-300 underline;
+    @apply text-sea-600 underline hover:text-sea-700 dark:text-sea-200 dark:hover:text-sea-300;
   }
 
   .post pre {
@@ -53,7 +57,7 @@ const lastModified = dayjs(remarkPluginFrontmatter.lastModified)
   .post p > code,
   .post ol code,
   .post ul code {
-    @apply bg-squirrel-200/60 border-sea-400 text-sea-700 dark:text-sea-300 rounded border-0 px-1 py-px font-mono text-sm dark:border-white/10 dark:bg-black/20;
+    @apply rounded border-0 border-sea-400 bg-squirrel-200/60 px-1 py-px font-mono text-sm text-sea-700 dark:border-white/10 dark:bg-black/20 dark:text-sea-300;
   }
 
   .post pre code {

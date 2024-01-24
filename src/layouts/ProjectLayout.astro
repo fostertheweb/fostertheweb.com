@@ -3,11 +3,11 @@ import ExternalLink from "../components/ExternalLink.astro";
 ---
 
 <main>
-  <section class="text-squirrel-900 flex flex-col gap-6 py-4">
+  <section class="flex flex-col gap-6 py-4 text-squirrel-900">
     <slot />
   </section>
 
-  <div class="bg-squirrel-200 dark:bg-squirrel-700 my-6 h-px w-full"></div>
+  <div class="my-6 h-px w-full bg-squirrel-100 dark:bg-squirrel-700"></div>
 
   <div class="flex gap-2 py-4 text-base md:items-center">
     <img
@@ -17,15 +17,15 @@ import ExternalLink from "../components/ExternalLink.astro";
     />
     <div>
       <p
-        class="text-sea-800 dark:text-sea-300 flex items-center gap-2 font-sans font-semibold"
+        class="flex items-center gap-2 font-sans font-semibold text-sea-800 dark:text-sea-300"
       >
         Go check out the project!
       </p>
 
-      <p class="text-squirrel-800 dark:text-squirrel-300 font-sans">
+      <p class="font-sans text-squirrel-800 dark:text-squirrel-300">
         You can see everything else I'm working on currently on <a
           href="https://github.com/fostertheweb"
-          class="text-squirrel-800 hover:text-sea-700 dark:text-sea-100 dark:hover:text-sea-200 inline-flex items-center gap-1 hover:underline"
+          class="inline-flex items-center gap-1 text-squirrel-800 hover:text-sea-700 hover:underline dark:text-sea-100 dark:hover:text-sea-200"
           >GitHub <ExternalLink />
         </a>
       </p>
@@ -34,7 +34,7 @@ import ExternalLink from "../components/ExternalLink.astro";
 </main>
 
 <footer class="text-center text-base">
-  <a href="/" class="text-squirrel-500 dark:text-squirrel-400 underline"
+  <a href="/" class="text-squirrel-500 underline dark:text-squirrel-400"
     >go home</a
   >
 </footer>

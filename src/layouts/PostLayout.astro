@@ -4,20 +4,12 @@ import ExternalLink from "../components/ExternalLink.astro";
 
 <main>
   <section
-    class="text-squirrel-900 dark:text-squirrel-200 flex flex-col gap-6 py-4"
+    class="flex flex-col gap-6 py-4 text-squirrel-900 dark:text-squirrel-200"
   >
     <slot />
   </section>
 
-  <div class="bg-squirrel-200 dark:bg-squirrel-700 my-6 h-px w-full"></div>
-
-  <section class="py-4">
-    <blockquote
-      class="border-squirrel-500 text-squirrel-500 dark:border-squirrel-400 dark:text-squirrel-400 border-l-2 pl-2 font-sans text-base"
-    >
-      No AI or LLMs were used in the process of writing this post.
-    </blockquote>
-  </section>
+  <div class="my-6 h-px w-full bg-squirrel-100 dark:bg-squirrel-700"></div>
 
   <div class="flex gap-2 py-4 text-base md:items-center">
     <img
@@ -27,15 +19,15 @@ import ExternalLink from "../components/ExternalLink.astro";
     />
     <div>
       <p
-        class="text-sea-800 dark:text-sea-300 flex items-center gap-2 font-sans font-semibold"
+        class="flex items-center gap-2 font-sans font-semibold text-sea-800 dark:text-sea-300"
       >
         Did you really read all of that?
       </p>
 
-      <p class="text-squirrel-800 dark:text-squirrel-300 font-sans">
-        Let me know how wrong I am over on <a
+      <p class="font-sans text-squirrel-800 dark:text-squirrel-300">
+        Let me know how wrong I am on <a
           href="https://twitter.com/fostertheweb"
-          class="text-squirrel-800 hover:text-sea-700 dark:text-sea-100 dark:hover:text-sea-200 inline-flex items-center gap-1 hover:underline"
+          class="inline-flex items-center gap-1 text-squirrel-800 hover:text-sea-700 hover:underline dark:text-sea-100 dark:hover:text-sea-200"
           >Twitter <ExternalLink />
         </a>
       </p>
@@ -43,8 +35,8 @@ import ExternalLink from "../components/ExternalLink.astro";
   </div>
 </main>
 
-<footer class="text-center text-base">
-  <a href="/" class="text-squirrel-500 dark:text-squirrel-400 underline"
+<footer class="mt-2 text-center text-base">
+  <a href="/" class="text-squirrel-500 underline dark:text-squirrel-400"
     >go home</a
   >
 </footer>
