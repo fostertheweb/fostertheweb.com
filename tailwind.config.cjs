@@ -5,7 +5,7 @@ module.exports = {
     extend: {
       fontFamily: {
         inter: ["Inter", "sans-serif"],
-        sans: ["Gangster Grotesk", "sans-serif"],
+        sans: ["Onest", "sans-serif"],
         mono: ["Cascadia Code", "Consolas", "Menlo", "monospace"],
       },
     },

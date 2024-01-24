@@ -15,12 +15,16 @@ const content = [
 
 const transformContent = content.map(async (entry) => {
   const { remarkPluginFrontmatter } = await entry.render();
+  const lastModified = remarkPluginFrontmatter.lastModified as string;
 
-  return { ...entry, lastModified: remarkPluginFrontmatter.lastModified };
+  return {
+    ...entry,
+    lastModified: new Date(lastModified).getMilliseconds(),
+  };
 });
 const contentWithLastModified = await Promise.all(transformContent);
 const feed = contentWithLastModified.sort(
-  (a, b) => b.lastModified - a.lastModified,
+  (a, b) => a.lastModified - b.lastModified,
 );
 ---
 
@@ -39,30 +43,26 @@ const feed = contentWithLastModified.sort(
         Work Log
       </h2>
       <div class="flex items-center gap-2 font-sans">
-        <a
-          href="#essay"
+        <span
           class="hidden rounded-sm border-0 border-l-4 border-purple-600/20 bg-purple-100 px-3 py-1 text-xs font-bold text-purple-900 dark:border-purple-300 dark:bg-purple-500/20 dark:text-purple-300"
         >
           Essay
-        </a>
-        <a
-          href="#project"
+        </span>
+        <span
           class="rounded-sm border-0 border-l-4 border-orange-600/20 bg-orange-100 px-3 py-1 text-xs font-bold text-orange-900 dark:border-orange-300 dark:bg-orange-500/20 dark:text-orange-300"
         >
           Project
-        </a>
-        <a
-          href="#thoughts"
+        </span>
+        <span
           class="rounded-sm border-0 border-l-4 border-sky-600/20 bg-sky-100 px-3 py-1 text-xs font-bold text-sky-900 dark:border-sky-300 dark:bg-sky-500/20 dark:text-sky-300"
         >
           Thoughts
-        </a>
-        <a
-          href="#snippet"
+        </span>
+        <span
           class="rounded-sm border-0 border-l-4 border-rose-600/20 bg-rose-100 px-3 py-1 text-xs font-bold text-rose-900 dark:border-rose-300 dark:bg-rose-500/20 dark:text-rose-300"
         >
           Snippet
-        </a>
+        </span>
       </div>
     </div>
 
