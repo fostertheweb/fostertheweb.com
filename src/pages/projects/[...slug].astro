@@ -65,16 +65,16 @@ const content = marked.parse(markdown);
       alt={entry.data.name}
     />
     <div
-      class="flex flex-col justify-between gap-1 text-base text-zinc-500 dark:text-zinc-400 md:flex-row md:items-center md:gap-0"
+      class="text-squirrel-500 dark:text-squirrel-400 flex flex-col justify-between gap-1 text-base md:flex-row md:items-center md:gap-0"
     >
       <div
-        class="flex flex-col gap-1 text-zinc-800 dark:text-emerald-100 md:flex-row md:items-center md:gap-4"
+        class="text-squirrel-800 dark:text-sea-100 flex flex-col gap-1 md:flex-row md:items-center md:gap-4"
       >
         <span class="inline-flex items-center gap-1.5">
           <Link />
           <a
             href="https://crowdq.fm"
-            class="hover:text-emerald-700 hover:underline dark:hover:text-emerald-200"
+            class="hover:text-sea-700 dark:hover:text-sea-200 hover:underline"
             >crowdq.fm</a
           >
         </span>
@@ -82,7 +82,7 @@ const content = marked.parse(markdown);
           <GitHub />
           <a
             href="https://github.com/fostertheweb/crowdq.fm"
-            class="hover:text-emerald-700 hover:underline dark:hover:text-emerald-200"
+            class="hover:text-sea-700 dark:hover:text-sea-200 hover:underline"
           >
             Repository
           </a>
@@ -92,7 +92,7 @@ const content = marked.parse(markdown);
       <span>
         Last Commit: <a
           href={mostRecentCommit.url}
-          class="underline dark:hover:text-zinc-500"
+          class="dark:hover:text-squirrel-500 underline"
           >{mostRecentCommit.sha.slice(0, 16)}</a
         ></span
       >
@@ -105,11 +105,11 @@ const content = marked.parse(markdown);
 
   <style is:global>
     .readme {
-      @apply font-sans text-base text-zinc-800 dark:text-zinc-300;
+      @apply text-squirrel-800 dark:text-squirrel-300 font-sans text-base;
     }
 
     .readme a {
-      @apply text-emerald-600 underline hover:text-emerald-700 dark:text-emerald-200 dark:hover:text-emerald-300;
+      @apply text-sea-600 hover:text-sea-700 dark:text-sea-200 dark:hover:text-sea-300 underline;
     }
 
     .readme ul {
@@ -133,7 +133,7 @@ const content = marked.parse(markdown);
     }
 
     .readme h3 {
-      @apply mt-4 font-sans text-lg font-bold dark:text-zinc-200;
+      @apply dark:text-squirrel-200 mt-4 font-sans text-lg font-bold;
     }
 
     .readme p {
@@ -147,7 +147,7 @@ const content = marked.parse(markdown);
     .readme p > code,
     .readme ol code,
     .readme ul code {
-      @apply rounded border-0 border-emerald-400 bg-zinc-200/60 px-1 py-px font-mono text-sm text-emerald-700 dark:border-white/10 dark:bg-black/20 dark:text-emerald-300;
+      @apply bg-squirrel-200/60 border-sea-400 text-sea-700 dark:text-sea-300 rounded border-0 px-1 py-px font-mono text-sm dark:border-white/10 dark:bg-black/20;
     }
 
     .readme pre code {
@@ -155,7 +155,7 @@ const content = marked.parse(markdown);
     }
 
     .readme input {
-      @apply accent-emerald-500;
+      @apply accent-sea-500;
     }
   </style>
 </Layout>

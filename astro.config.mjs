@@ -11,7 +11,10 @@ export default defineConfig({
   markdown: {
     remarkPlugins: [remarkModifiedTime],
     shikiConfig: {
-      theme: "dark-plus",
+      experimentalThemes: {
+        light: "github-light",
+        dark: "github-dark",
+      },
       wrap: true,
     },
   },

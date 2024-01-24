@@ -35,10 +35,10 @@ const feed = contentWithLastModified.sort(
 
   <section class="pl-1 pt-6">
     <div
-      class="flex flex-col justify-between gap-2 border-b-0 border-l-2 border-dashed border-zinc-200 pb-3 pl-6 pt-1 dark:border-zinc-600 sm:flex-row sm:items-center sm:gap-0"
+      class="border-squirrel-200 dark:border-squirrel-600 flex flex-col justify-between gap-2 border-b-0 border-l-2 border-dashed pb-3 pl-6 pt-1 sm:flex-row sm:items-center sm:gap-0"
     >
       <h2
-        class="font-sans text-2xl font-bold text-zinc-600 dark:border-zinc-500 dark:text-zinc-300"
+        class="text-squirrel-600 dark:border-squirrel-500 dark:text-squirrel-300 font-sans text-2xl font-bold"
       >
         Work Log
       </h2>
@@ -49,24 +49,26 @@ const feed = contentWithLastModified.sort(
           Essay
         </span>
         <span
-          class="rounded-sm border-0 border-l-4 border-orange-600/20 bg-orange-100 px-3 py-1 text-xs font-bold text-orange-900 dark:border-orange-300 dark:bg-orange-500/20 dark:text-orange-300"
+          class="rounded-sm border-0 border-l-4 border-orange-600/20 bg-orange-100 px-3 py-1 font-mono text-xs text-orange-900 dark:border-orange-300 dark:bg-orange-500/20 dark:text-orange-300"
         >
           Project
         </span>
         <span
-          class="rounded-sm border-0 border-l-4 border-sky-600/20 bg-sky-100 px-3 py-1 text-xs font-bold text-sky-900 dark:border-sky-300 dark:bg-sky-500/20 dark:text-sky-300"
+          class="rounded-sm border-0 border-l-4 border-sky-600/20 bg-sky-100 px-3 py-1 font-mono text-xs text-sky-900 dark:border-sky-300 dark:bg-sky-500/20 dark:text-sky-300"
         >
           Thoughts
         </span>
         <span
-          class="rounded-sm border-0 border-l-4 border-rose-600/20 bg-rose-100 px-3 py-1 text-xs font-bold text-rose-900 dark:border-rose-300 dark:bg-rose-500/20 dark:text-rose-300"
+          class="rounded-sm border-0 border-l-4 border-rose-600/20 bg-rose-100 px-3 py-1 font-mono text-xs text-rose-900 dark:border-rose-300 dark:bg-rose-500/20 dark:text-rose-300"
         >
           Snippet
         </span>
       </div>
     </div>
 
-    <ul class="border-l-2 border-zinc-200 pl-6 font-sans dark:border-zinc-600">
+    <ul
+      class="border-squirrel-200 dark:border-squirrel-600 border-l-2 pl-6 font-sans"
+    >
       {
         feed.map((post) => (
           <li class="flex flex-col gap-1 py-4">
@@ -75,14 +77,14 @@ const feed = contentWithLastModified.sort(
                 <div class="flex items-center gap-2 ">
                   <a
                     href={`/thoughts/${post.slug}`}
-                    class="relative font-sans text-xl font-bold text-zinc-800 hover:text-emerald-800 hover:underline dark:text-zinc-300 dark:hover:text-emerald-200"
+                    class="text-squirrel-800 dark:text-squirrel-300 hover:text-sea-800 dark:hover:text-sea-200 relative font-sans text-xl font-bold hover:underline"
                   >
                     {post.data.title}
-                    <div class="ftw-background absolute top-1.5 h-4 w-4 bg-zinc-50 dark:bg-zinc-800" />
+                    <div class="ftw-background bg-squirrel-50 dark:bg-squirrel-800 absolute top-1.5 h-4 w-4" />
                     <div class="ftw-dot absolute top-1.5 h-4 w-4 rounded-full border-2 border-sky-600/20 bg-sky-100 bg-blend-exclusion shadow-sky-500/30 dark:border-sky-400 dark:bg-sky-500/25 dark:shadow" />
                   </a>
                 </div>
-                <p class="font-sans text-base text-zinc-700 dark:text-zinc-400">
+                <p class="text-squirrel-700 dark:text-squirrel-400 font-sans text-base">
                   {post.data.blurb}
                 </p>
               </Fragment>
@@ -92,14 +94,14 @@ const feed = contentWithLastModified.sort(
                 <div class="flex items-center gap-2 ">
                   <a
                     href={`/snippets/${post.slug}`}
-                    class="relative font-sans text-xl font-bold text-zinc-800 hover:text-emerald-800 hover:underline dark:text-zinc-300 dark:hover:text-emerald-200"
+                    class="text-squirrel-800 dark:text-squirrel-300 hover:text-sea-800 dark:hover:text-sea-200 relative font-sans text-xl font-bold hover:underline"
                   >
                     {post.data.title}
-                    <div class="ftw-background absolute top-1.5 h-4 w-4 bg-zinc-50 dark:bg-zinc-800" />
+                    <div class="ftw-background bg-squirrel-50 dark:bg-squirrel-800 absolute top-1.5 h-4 w-4" />
                     <div class="ftw-dot absolute top-1.5 h-4 w-4 rounded-full border-2 border-rose-600/20 bg-rose-100 bg-blend-exclusion shadow-rose-500/30 dark:border-rose-400 dark:bg-rose-500/25 dark:shadow" />
                   </a>
                 </div>
-                <p class="font-sans text-base text-zinc-700 dark:text-zinc-400">
+                <p class="text-squirrel-700 dark:text-squirrel-400 font-sans text-base">
                   {post.data.blurb}
                 </p>
               </Fragment>
@@ -109,7 +111,7 @@ const feed = contentWithLastModified.sort(
                 <div class="flex items-center gap-2 ">
                   <a
                     href={`/projects/${post.slug}`}
-                    class="relative font-sans text-xl font-bold text-zinc-800 hover:text-emerald-800 hover:underline dark:text-zinc-300 dark:hover:text-emerald-200"
+                    class="text-squirrel-800 dark:text-squirrel-300 hover:text-sea-800 dark:hover:text-sea-200 relative font-sans text-xl font-bold hover:underline"
                   >
                     {post.data.name}
                     <img
@@ -117,11 +119,11 @@ const feed = contentWithLastModified.sort(
                       class="hidden"
                       style={{ height: "18px", margin: "5px 0" }}
                     />
-                    <div class="ftw-background absolute h-4 w-4 bg-zinc-50 dark:bg-zinc-800" />
+                    <div class="ftw-background bg-squirrel-50 dark:bg-squirrel-800 absolute h-4 w-4" />
                     <div class="ftw-dot absolute h-4 w-4 rounded-full border-2 border-orange-600/25 bg-orange-100 shadow-orange-500/30 dark:border-orange-400 dark:bg-orange-500/20 dark:shadow" />
                   </a>
                 </div>
-                <p class="font-sans text-base text-zinc-700 dark:text-zinc-400">
+                <p class="text-squirrel-700 dark:text-squirrel-400 font-sans text-base">
                   {post.data.description}
                 </p>
               </Fragment>
@@ -131,7 +133,7 @@ const feed = contentWithLastModified.sort(
       }
     </ul>
     <div
-      class="h-6 border-l-2 border-dashed border-zinc-200 pl-2 dark:border-zinc-600"
+      class="border-squirrel-200 dark:border-squirrel-600 h-6 border-l-2 border-dashed pl-2"
     >
     </div>
   </section>

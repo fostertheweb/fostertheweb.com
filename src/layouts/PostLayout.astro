@@ -3,15 +3,17 @@ import ExternalLink from "../components/ExternalLink.astro";
 ---
 
 <main>
-  <section class="flex flex-col gap-6 py-4 text-zinc-900 dark:text-zinc-200">
+  <section
+    class="text-squirrel-900 dark:text-squirrel-200 flex flex-col gap-6 py-4"
+  >
     <slot />
   </section>
 
-  <div class="my-6 h-px w-full bg-zinc-200 dark:bg-zinc-700"></div>
+  <div class="bg-squirrel-200 dark:bg-squirrel-700 my-6 h-px w-full"></div>
 
   <section class="py-4">
     <blockquote
-      class="border-l-2 border-zinc-500 pl-2 font-sans text-base text-zinc-500 dark:border-zinc-400 dark:text-zinc-400"
+      class="border-squirrel-500 text-squirrel-500 dark:border-squirrel-400 dark:text-squirrel-400 border-l-2 pl-2 font-sans text-base"
     >
       No AI or LLMs were used in the process of writing this post.
     </blockquote>
@@ -25,15 +27,15 @@ import ExternalLink from "../components/ExternalLink.astro";
     />
     <div>
       <p
-        class="flex items-center gap-2 font-sans font-semibold text-emerald-800 dark:text-emerald-300"
+        class="text-sea-800 dark:text-sea-300 flex items-center gap-2 font-sans font-semibold"
       >
         Did you really read all of that?
       </p>
 
-      <p class="font-sans text-zinc-800 dark:text-zinc-300">
+      <p class="text-squirrel-800 dark:text-squirrel-300 font-sans">
         Let me know how wrong I am over on <a
           href="https://twitter.com/fostertheweb"
-          class="inline-flex items-center gap-1 text-zinc-800 hover:text-emerald-700 hover:underline dark:text-emerald-100 dark:hover:text-emerald-200"
+          class="text-squirrel-800 hover:text-sea-700 dark:text-sea-100 dark:hover:text-sea-200 inline-flex items-center gap-1 hover:underline"
           >Twitter <ExternalLink />
         </a>
       </p>
@@ -42,5 +44,7 @@ import ExternalLink from "../components/ExternalLink.astro";
 </main>
 
 <footer class="text-center text-base">
-  <a href="/" class="text-zinc-500 underline dark:text-zinc-400">go home</a>
+  <a href="/" class="text-squirrel-500 dark:text-squirrel-400 underline"
+    >go home</a
+  >
 </footer>

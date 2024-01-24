@@ -24,34 +24,36 @@ const lastModified = dayjs(remarkPluginFrontmatter.lastModified)
 
 <Layout title={entry.data.title}>
   <header class="space-y-2 py-4">
-    <h1 class="font-sans text-3xl font-bold text-zinc-800 dark:text-zinc-200">
+    <h1
+      class="text-squirrel-800 dark:text-squirrel-200 font-sans text-3xl font-bold"
+    >
       {entry.data.title}
     </h1>
     <div class="font-sans text-base">
-      <span class="text-zinc-500 dark:text-zinc-400">
+      <span class="text-squirrel-500 dark:text-squirrel-400">
         Last Updated: {lastModified}
       </span>
     </div>
   </header>
 
-  <article class="post font-sans text-lg leading-8 text-zinc-900">
+  <article class="post text-squirrel-900 font-sans text-lg leading-8">
     <Content />
   </article>
 </Layout>
 
 <style is:global>
   .post section a {
-    @apply text-emerald-600 underline hover:text-emerald-700 dark:text-emerald-200 dark:hover:text-emerald-300;
+    @apply text-sea-600 hover:text-sea-700 dark:text-sea-200 dark:hover:text-sea-300 underline;
   }
 
   .post pre {
-    @apply mt-2 rounded-lg border border-black/10 p-4 font-mono text-sm shadow shadow-black/10 dark:border-white/10;
+    @apply mt-2 rounded-lg border border-black/10 p-4 font-mono text-sm dark:border-white/10;
   }
 
   .post p > code,
   .post ol code,
   .post ul code {
-    @apply rounded border-0 border-emerald-400 bg-zinc-200/60 px-1 py-px font-mono text-sm text-emerald-700 dark:border-white/10 dark:bg-black/20 dark:text-emerald-300;
+    @apply bg-squirrel-200/60 border-sea-400 text-sea-700 dark:text-sea-300 rounded border-0 px-1 py-px font-mono text-sm dark:border-white/10 dark:bg-black/20;
   }
 
   .post pre code {

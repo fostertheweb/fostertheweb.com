@@ -14,12 +14,12 @@ dependencies:
   '@astrojs/tailwind':
     specifier: ^5.1.0
     version: 5.1.0(astro@4.1.0)(tailwindcss@3.3.5)
+  '@fontsource/archivo':
+    specifier: ^5.0.16
+    version: 5.0.16
   '@fontsource/inter':
     specifier: ^5.0.16
     version: 5.0.16
-  '@fontsource/onest':
-    specifier: ^5.0.2
-    version: 5.0.2
   astro:
     specifier: ^4.1.0
     version: 4.1.0
@@ -608,12 +608,12 @@ packages:
     dev: false
     optional: true
 
-  /@fontsource/inter@5.0.16:
-    resolution: {integrity: sha512-qF0aH5UiZvCmneX5orJbVRoc2VTyLTV3X/7laMp03Qt28L+B9tFlZODOGUL64wDWc69YVdi1LeJB0cIgd51lvw==}
+  /@fontsource/archivo@5.0.16:
+    resolution: {integrity: sha512-HBqoOkkB4TVsdjQPZ75sNuRAvy1JvnD7s1GKzAOnnncDIc0mPN1W91AWBmVCkto6pZcXR/EIMzD1Zu4C4GPX1g==}
     dev: false
 
-  /@fontsource/onest@5.0.2:
-    resolution: {integrity: sha512-BAQOSTJOHl/4+0KSuabfgLBDNeViWGbFELcJ4cC88W9HkJ6LUuMaDGdS6hQt4c/jz1KaKZCe8xoROHMz9QUSrA==}
+  /@fontsource/inter@5.0.16:
+    resolution: {integrity: sha512-qF0aH5UiZvCmneX5orJbVRoc2VTyLTV3X/7laMp03Qt28L+B9tFlZODOGUL64wDWc69YVdi1LeJB0cIgd51lvw==}
     dev: false
 
   /@img/sharp-darwin-arm64@0.33.1:
