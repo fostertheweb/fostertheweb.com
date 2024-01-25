@@ -2,6 +2,7 @@
 import { getCollection } from "astro:content";
 import { Marked } from "marked";
 // @ts-ignore
+import { Image } from "astro:assets";
 import { markedHighlight } from "marked-highlight";
 import { codeToHtml } from "shikiji";
 import GitHub from "../../components/icons/GitHub.astro";
@@ -58,23 +59,25 @@ const content = marked.parse(markdown);
 
 <Layout title={entry.data.name}>
   <header class="space-y-2 py-4">
-    <img
+    <Image
       class="rounded-lg"
       srcset={`${entry.data.header_image}, ${entry.data.header_image_2x} 2x`}
       src={entry.data.header_image}
       alt={entry.data.name}
+      width={768}
+      height={300}
     />
     <div
-      class="text-squirrel-500 dark:text-squirrel-400 flex flex-col justify-between gap-1 text-base md:flex-row md:items-center md:gap-0"
+      class="flex flex-col justify-between gap-1 text-base text-squirrel-500 dark:text-squirrel-400 md:flex-row md:items-center md:gap-0"
     >
       <div
-        class="text-squirrel-800 dark:text-sea-100 flex flex-col gap-1 md:flex-row md:items-center md:gap-4"
+        class="flex flex-col gap-1 text-squirrel-800 dark:text-sea-100 md:flex-row md:items-center md:gap-4"
       >
         <span class="inline-flex items-center gap-1.5">
           <Link />
           <a
             href="https://crowdq.fm"
-            class="hover:text-sea-700 dark:hover:text-sea-200 hover:underline"
+            class="hover:text-sea-700 hover:underline dark:hover:text-sea-200"
             >crowdq.fm</a
           >
         </span>
@@ -82,7 +85,7 @@ const content = marked.parse(markdown);
           <GitHub />
           <a
             href="https://github.com/fostertheweb/crowdq.fm"
-            class="hover:text-sea-700 dark:hover:text-sea-200 hover:underline"
+            class="hover:text-sea-700 hover:underline dark:hover:text-sea-200"
           >
             Repository
           </a>
@@ -92,7 +95,7 @@ const content = marked.parse(markdown);
       <span>
         Last Commit: <a
           href={mostRecentCommit.url}
-          class="dark:hover:text-squirrel-500 underline"
+          class="underline dark:hover:text-squirrel-500"
           >{mostRecentCommit.sha.slice(0, 16)}</a
         ></span
       >
@@ -105,11 +108,11 @@ const content = marked.parse(markdown);
 
   <style is:global>
     .readme {
-      @apply text-squirrel-800 dark:text-squirrel-300 font-sans text-base;
+      @apply font-sans text-base text-squirrel-800 dark:text-squirrel-300;
     }
 
     .readme a {
-      @apply text-sea-600 hover:text-sea-700 dark:text-sea-200 dark:hover:text-sea-300 underline;
+      @apply text-sea-600 underline hover:text-sea-700 dark:text-sea-200 dark:hover:text-sea-300;
     }
 
     .readme ul {
@@ -133,7 +136,7 @@ const content = marked.parse(markdown);
     }
 
     .readme h3 {
-      @apply dark:text-squirrel-200 mt-4 font-sans text-lg font-bold;
+      @apply mt-4 font-sans text-lg font-bold dark:text-squirrel-200;
     }
 
     .readme p {
@@ -147,7 +150,7 @@ const content = marked.parse(markdown);
     .readme p > code,
     .readme ol code,
     .readme ul code {
-      @apply bg-squirrel-200/60 border-sea-400 text-sea-700 dark:text-sea-300 rounded border-0 px-1 py-px font-mono text-sm dark:border-white/10 dark:bg-black/20;
+      @apply rounded border-0 border-sea-400 bg-squirrel-200/60 px-1 py-px font-mono text-sm text-sea-700 dark:border-white/10 dark:bg-black/20 dark:text-sea-300;
     }
 
     .readme pre code {
