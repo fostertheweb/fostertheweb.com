@@ -18,14 +18,13 @@ const transformContent = content.map(async (entry) => {
 
   return {
     ...entry,
-    lastModified: new Date(lastModified).getMilliseconds(),
+    lastModified: new Date(lastModified).getTime(),
   };
 });
 const contentWithLastModified = await Promise.all(transformContent);
 const feed = contentWithLastModified.sort(
-  (a, b) => a.lastModified - b.lastModified,
+  (a, b) => b.lastModified - a.lastModified,
 );
-console.log(feed);
 ---
 
 <Layout title="Jonathan Foster">
