@@ -19,7 +19,7 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body
-    class="bg-squirrel-50 text-squirrel-900 dark:bg-squirrel-800 dark:text-squirrel-300 mx-auto w-full max-w-2xl p-4 print:max-w-full print:bg-white print:p-0"
+    class="mx-auto w-full max-w-2xl bg-squirrel-50 p-4 text-squirrel-900 dark:bg-squirrel-950 dark:text-squirrel-300 print:max-w-full print:bg-white print:p-0"
   >
     <header
       class="flex flex-col justify-between gap-2 pb-4 print:hidden md:flex-row md:items-center md:gap-0"
@@ -28,23 +28,23 @@ const { title } = Astro.props;
         <img src="/images/memoji-2.png" alt="memoji" class="h-12 rounded" />
         <div class="flex flex-col">
           <h2
-            class="text-sea-600 dark:text-sea-300 font-sans text-xl font-bold"
+            class="font-sans text-xl font-bold text-sea-600 dark:text-sea-300"
           >
             Jonathan Foster
           </h2>
           <h2
-            class="text-squirrel-500 dark:text-squirrel-50 font-mono text-base opacity-80"
+            class="font-mono text-base text-squirrel-500 opacity-80 dark:text-squirrel-50"
           >
             @fostertheweb
           </h2>
         </div>
       </a>
 
-      <ul class="text-squirrel-800 dark:text-sea-100 flex gap-6 font-sans">
+      <ul class="flex gap-6 font-sans text-squirrel-800 dark:text-sea-100">
         <li class="flex items-center gap-1">
           <a
             href="https://github.com/fostertheweb"
-            class="hover:text-sea-700 dark:hover:text-sea-200 hover:underline"
+            class="hover:text-sea-700 hover:underline dark:hover:text-sea-200"
             >GitHub</a
           >
           <ExternalLink />
@@ -52,7 +52,7 @@ const { title } = Astro.props;
         <li class="flex items-center gap-1">
           <a
             href="https://twitter.com/fostertheweb"
-            class="hover:text-sea-700 dark:hover:text-sea-200 hover:underline"
+            class="hover:text-sea-700 hover:underline dark:hover:text-sea-200"
             >Twitter</a
           >
           <ExternalLink />
@@ -60,7 +60,7 @@ const { title } = Astro.props;
         <li class="flex items-center gap-1">
           <a
             href="https://linkedin.com/in/fostertheweb"
-            class="hover:text-sea-700 dark:hover:text-sea-200 hover:underline"
+            class="hover:text-sea-700 hover:underline dark:hover:text-sea-200"
             >LinkedIn</a
           >
           <ExternalLink />
