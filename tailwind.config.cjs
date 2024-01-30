@@ -4,9 +4,9 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        inter: ["Inter", "sans-serif"],
-        sans: ["Archivo", "sans-serif"],
-        mono: ["Cascadia Code", "Consolas", "Menlo", "monospace"],
+        inter: ["var(--font-inter)"],
+        sans: ["var(--font-archivo)"],
+        mono: ["var(--font-cascadia)"],
       },
       colors: {
         olivine: {

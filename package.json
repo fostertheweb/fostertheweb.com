@@ -16,6 +16,7 @@
     "@fontsource/archivo": "^5.0.16",
     "@fontsource/inter": "^5.0.16",
     "astro": "^4.1.0",
+    "astro-font": "^0.0.77",
     "dayjs": "^1.11.10",
     "marked": "^10.0.0",
     "marked-highlight": "^2.0.7",
