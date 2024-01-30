@@ -1,9 +1,12 @@
 ---
-import "@fontsource/inter";
+import { join } from "node:path";
+import { AstroFont } from "astro-font";
 import Job from "../components/Job.astro";
 import LinkIcon from "../components/LinkIcon.astro";
 import MailIcon from "../components/MailIcon.astro";
 import PhoneIcon from "../components/PhoneIcon.astro";
+
+const makeFontPath = (name: string) => join(process.cwd(), 'public', 'fonts', name)
 ---
 
 <!doctype html>
@@ -13,6 +16,38 @@ import PhoneIcon from "../components/PhoneIcon.astro";
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>Resume</title>
+    <AstroFont
+      config={[
+        {
+          src: [],
+          preload: false,
+          name: "Inter",
+          display: "swap",
+          fallback: "sans-serif",
+          cssVariable: "font-inter",
+          googleFontsURL: 'https://fonts.googleapis.com/css2?family=Inter',
+        },
+        {
+          src: [
+            {
+              style: "italic",
+              weight: "normal",
+              path: makeFontPath("bluunext-bolditalic-webfont.woff2"),
+            },
+            {
+              style: "normal",
+              weight: "normal",
+              path: makeFontPath("bluunext-bold-webfont.woff2"),
+            },
+          ],
+          name: "bluu",
+          preload: false,
+          display: "swap",
+          fallback: "sans-serif",
+          cssVariable: "font-bluu",
+        },
+      ]}
+    />
   </head>
   <body class="mx-auto mb-[0.4in] mt-0 font-inter no-underline">
     <header class="flex items-center justify-between bg-[#f1fff8] p-[0.4in]">
@@ -110,31 +145,13 @@ import PhoneIcon from "../components/PhoneIcon.astro";
 </html>
 
 <style>
-  @font-face {
-    font-family: "bluu";
-    src:
-      url("/fonts/bluunext-bold-webfont.woff2") format("woff2"),
-      url("/fonts/bluunext-bold-webfont.woff") format("woff");
-    font-weight: normal;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: "bluu";
-    src:
-      url("/fonts/bluunext-bolditalic-webfont.woff2") format("woff2"),
-      url("/fonts/bluunext-bolditalic-webfont.woff") format("woff");
-    font-weight: normal;
-    font-style: italic;
-  }
-
   body {
     line-height: 1.425;
     color: #444;
   }
 
   .name {
-    font-family: "bluu";
+    font-family: "var(--font-bluu)";
     font-size: 3.5rem;
     color: #3b6f55;
   }
