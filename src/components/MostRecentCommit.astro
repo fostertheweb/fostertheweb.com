@@ -1,0 +1,28 @@
+---
+const { owner, repo } = Astro.props;
+
+async function getMostRecentCommit(owner: string, repo: string) {
+  const apiUrl = `https://api.github.com/repos/${owner}/${repo}/commits/main`;
+
+  const response = await fetch(apiUrl, {
+    headers: {
+      Accept: "application/vnd.github.v3+json",
+    },
+  });
+
+  const data = await response.json();
+  const { sha, html_url: url } = data;
+
+  return { sha, url };
+}
+
+const mostRecentCommit = await getMostRecentCommit(owner, repo);
+---
+
+<span>
+  Last Commit: <a
+    href={mostRecentCommit.url}
+    class="underline dark:hover:text-squirrel-500"
+    >{mostRecentCommit.sha.slice(0, 16)}</a
+  ></span
+>
