@@ -5,7 +5,7 @@ import { Marked } from "marked";
 import { Image } from "astro:assets";
 import { markedHighlight } from "marked-highlight";
 import { codeToHtml } from "shikiji";
-import MostRecentCommit from "../../components/MostRecentCommit.astro";
+import MostRecentCommit from "../../components/MostRecentCommit.jsx";
 import GitHub from "../../components/icons/GitHub.astro";
 import Link from "../../components/icons/Link.astro";
 import Layout from "../../layouts/Layout.astro";
@@ -52,10 +52,10 @@ const content = marked.parse(markdown);
       height={300}
     />
     <div
-      class="flex flex-col justify-between gap-1 text-base text-squirrel-500 dark:text-squirrel-400 md:flex-row md:items-center md:gap-0"
+      class="flex flex-col justify-between gap-1 text-base text-squirrel-500 md:flex-row md:items-center md:gap-0 dark:text-squirrel-400"
     >
       <div
-        class="flex flex-col gap-1 text-squirrel-800 dark:text-sea-100 md:flex-row md:items-center md:gap-4"
+        class="flex flex-col gap-1 text-squirrel-800 md:flex-row md:items-center md:gap-4 dark:text-sea-100"
       >
         <span class="inline-flex items-center gap-1.5">
           <Link />
@@ -76,7 +76,7 @@ const content = marked.parse(markdown);
         </span>
       </div>
 
-      <MostRecentCommit client:load {owner} {repo} />
+      <MostRecentCommit client:load owner={owner} repo={repo} />
     </div>
 
     <article set:html={content} class="readme" />
@@ -140,3 +140,4 @@ const content = marked.parse(markdown);
     }
   </style>
 </Layout>
+../../components/MostRecentCommit.jsx
