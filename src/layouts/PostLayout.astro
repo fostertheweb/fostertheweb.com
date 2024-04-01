@@ -1,5 +1,5 @@
 ---
-import ExternalLink from "../components/ExternalLink.astro";
+
 ---
 
 <main>
@@ -9,34 +9,10 @@ import ExternalLink from "../components/ExternalLink.astro";
     <slot />
   </section>
 
-  <div class="my-6 h-px w-full bg-squirrel-100 dark:bg-squirrel-700"></div>
-
-  <div class="flex gap-2 py-4 text-base md:items-center">
-    <img
-      src="/images/memoji-hand.png"
-      alt="memoji"
-      class="h-12 w-12 rounded bg-[#b7c8b2]"
-    />
-    <div>
-      <p
-        class="flex items-center gap-2 font-sans font-semibold text-sea-800 dark:text-sea-300"
-      >
-        Did you really read all of that?
-      </p>
-
-      <p class="font-sans text-squirrel-800 dark:text-squirrel-300">
-        Let me know how wrong I am on <a
-          href="https://twitter.com/fostertheweb"
-          class="inline-flex items-center gap-1 text-squirrel-800 hover:text-sea-700 hover:underline dark:text-sea-100 dark:hover:text-sea-200"
-          >Twitter <ExternalLink />
-        </a>
-      </p>
-    </div>
-  </div>
+  <div class="my-4 h-px w-full bg-squirrel-100 dark:bg-squirrel-700/40"></div>
 </main>
 
 <footer class="mt-2 text-center text-base">
-  <a href="/" class="text-squirrel-500 underline dark:text-squirrel-400"
-    >go home</a
+  <a href="/" class="text-squirrel-500 underline dark:text-squirrel-400">home</a
   >
 </footer>

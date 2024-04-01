@@ -1,6 +1,5 @@
 ---
 import { getCollection } from "astro:content";
-import About from "../components/About.astro";
 import Layout from "../layouts/Layout.astro";
 
 const thoughts = await getCollection("thoughts");
@@ -23,24 +22,16 @@ const transformContent = content.map(async (entry) => {
 });
 const contentWithLastModified = await Promise.all(transformContent);
 const feed = contentWithLastModified.sort(
-  (a, b) => b.lastModified - a.lastModified,
+  (a, b) => b.lastModified - a.lastModified
 );
 ---
 
 <Layout title="Jonathan Foster">
-  <div class="px-1 py-4">
-    <About />
-  </div>
-
+  <div class="my-2 h-px dark:bg-squirrel-700/40"></div>
   <section class="pl-1 pt-6">
     <div
-      class="flex flex-col justify-between gap-2 border-b-0 border-l-2 border-dashed border-squirrel-200 pb-3 pl-6 pt-1 dark:border-squirrel-600 sm:flex-row sm:items-center sm:gap-0"
+      class="flex flex-col justify-between gap-2 border-b-0 border-l-2 border-dashed border-squirrel-200 pb-3 pl-6 pt-1 sm:flex-row sm:items-center sm:gap-0 dark:border-squirrel-600"
     >
-      <h2
-        class="font-sans text-xl font-bold text-sea-700 dark:border-squirrel-500 dark:text-squirrel-300"
-      >
-        Work Log
-      </h2>
       <div class="flex items-center gap-2 font-sans">
         <span
           class="hidden rounded-sm border-0 border-l-4 border-purple-600/20 bg-purple-100 px-3 py-1 text-xs font-bold text-purple-900 dark:border-purple-300 dark:bg-purple-500/20 dark:text-purple-300"
@@ -82,7 +73,7 @@ const feed = contentWithLastModified.sort(
                   class="hidden"
                   style={{ height: "18px", margin: "5px 0" }}
                 />
-                <div class="ftw-background absolute h-4 w-4 bg-squirrel-50 dark:bg-squirrel-800" />
+                <div class="ftw-background absolute h-4 w-4 bg-squirrel-50 dark:bg-squirrel-950" />
                 <div class="ftw-dot absolute h-4 w-4 rounded-full border-2 border-orange-600/25 bg-orange-100 shadow-orange-500/30 dark:border-orange-400 dark:bg-orange-500/20 dark:shadow" />
               </a>
             </div>
@@ -103,7 +94,7 @@ const feed = contentWithLastModified.sort(
                     class="relative font-sans text-xl font-bold text-squirrel-800 hover:text-sea-800 hover:underline dark:text-squirrel-300 dark:hover:text-sea-200"
                   >
                     {post.data.title}
-                    <div class="ftw-background absolute top-1.5 h-4 w-4 bg-squirrel-50 dark:bg-squirrel-800" />
+                    <div class="ftw-background absolute top-1.5 h-4 w-4 bg-squirrel-50 dark:bg-squirrel-950" />
                     <div class="ftw-dot absolute top-1.5 h-4 w-4 rounded-full border-2 border-sky-600/20 bg-sky-100 bg-blend-exclusion shadow-sky-500/30 dark:border-sky-400 dark:bg-sky-500/25 dark:shadow" />
                   </a>
                 </div>
@@ -120,7 +111,7 @@ const feed = contentWithLastModified.sort(
                     class="relative font-sans text-xl font-bold text-squirrel-800 hover:text-sea-800 hover:underline dark:text-squirrel-300 dark:hover:text-sea-200"
                   >
                     {post.data.title}
-                    <div class="ftw-background absolute top-1.5 h-4 w-4 bg-squirrel-50 dark:bg-squirrel-800" />
+                    <div class="ftw-background absolute top-1.5 h-4 w-4 bg-squirrel-50 dark:bg-squirrel-950" />
                     <div class="ftw-dot absolute top-1.5 h-4 w-4 rounded-full border-2 border-rose-600/20 bg-rose-100 bg-blend-exclusion shadow-rose-500/30 dark:border-rose-400 dark:bg-rose-500/25 dark:shadow" />
                   </a>
                 </div>
