@@ -4,6 +4,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
+        straker: ["Straker"],
         inter: ["Inter", "sans-serif"],
         sans: ["Archivo", "sans-serif"],
         mono: ["Cascadia Code", "Consolas", "Menlo", "monospace"],

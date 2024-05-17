@@ -1,125 +1,53 @@
 ---
 import { getCollection } from "astro:content";
+import GitHub from "../components/icons/GitHub.astro";
+import Link from "../components/icons/Link.astro";
 import Layout from "../layouts/Layout.astro";
 
-const thoughts = await getCollection("thoughts");
 const projects = await getCollection("projects");
-const snippets = await getCollection("snippets");
-
-const content = [
-  ...thoughts.map((post) => ({ ...post, type: "thoughts" })),
-  ...snippets.map((snippet) => ({ ...snippet, type: "snippet" })),
-];
-
-const transformContent = content.map(async (entry) => {
-  const { remarkPluginFrontmatter } = await entry.render();
-  const lastModified = remarkPluginFrontmatter.lastModified as string;
-
-  return {
-    ...entry,
-    lastModified: new Date(lastModified).getTime(),
-  };
-});
-const contentWithLastModified = await Promise.all(transformContent);
-const feed = contentWithLastModified.sort(
-  (a, b) => b.lastModified - a.lastModified
-);
 ---
 
 <Layout title="Jonathan Foster">
   <div class="my-2 h-px dark:bg-squirrel-700/40"></div>
   <section class="pl-1 pt-6">
-    <div
-      class="flex flex-col justify-between gap-2 border-b-0 border-l-2 border-dashed border-squirrel-200 pb-3 pl-6 pt-1 sm:flex-row sm:items-center sm:gap-0 dark:border-squirrel-600"
-    >
-      <div class="flex items-center gap-2 font-sans">
-        <span
-          class="hidden rounded-sm border-0 border-l-4 border-purple-600/20 bg-purple-100 px-3 py-1 text-xs font-bold text-purple-900 dark:border-purple-300 dark:bg-purple-500/20 dark:text-purple-300"
-        >
-          Essay
-        </span>
-        <span
-          class="rounded-sm border-0 border-l-4 border-orange-600/20 bg-orange-100 px-3 py-1 font-mono text-xs text-orange-900 dark:border-orange-300 dark:bg-orange-500/20 dark:text-orange-300"
-        >
-          Project
-        </span>
-        <span
-          class="rounded-sm border-0 border-l-4 border-sky-600/20 bg-sky-100 px-3 py-1 font-mono text-xs text-sky-900 dark:border-sky-300 dark:bg-sky-500/20 dark:text-sky-300"
-        >
-          Thoughts
-        </span>
-        <span
-          class="rounded-sm border-0 border-l-4 border-rose-600/20 bg-rose-100 px-3 py-1 font-mono text-xs text-rose-900 dark:border-rose-300 dark:bg-rose-500/20 dark:text-rose-300"
-        >
-          Snippet
-        </span>
-      </div>
-    </div>
-
     <ul
       class="border-l-2 border-squirrel-200 pl-6 font-sans dark:border-squirrel-600"
     >
       {
         projects.map((project) => (
           <li class="flex flex-col gap-1 py-4">
-            <div class="flex items-center gap-2 ">
-              <a
-                href={`/projects/${project.slug}`}
-                class="relative font-sans text-xl font-bold text-squirrel-800 hover:text-sea-800 hover:underline dark:text-squirrel-300 dark:hover:text-sea-200"
-              >
-                {project.data.name}
-                <img
-                  src={project.data.logo}
-                  class="hidden"
-                  style={{ height: "18px", margin: "5px 0" }}
-                />
-                <div class="ftw-background absolute h-4 w-4 bg-squirrel-50 dark:bg-squirrel-950" />
-                <div class="ftw-dot absolute h-4 w-4 rounded-full border-2 border-orange-600/25 bg-orange-100 shadow-orange-500/30 dark:border-orange-400 dark:bg-orange-500/20 dark:shadow" />
-              </a>
+            <div class="relative flex items-center gap-2 ">
+              <img
+                src={project.data.logo}
+                style={{ height: "24px", margin: "5px 0" }}
+                alt={project.data.name}
+              />
+              <div class="ftw-background absolute h-4 w-4 bg-squirrel-50 dark:bg-squirrel-950" />
+              <div class="ftw-dot absolute h-4 w-4 rounded-full border-2 border-orange-600/25 bg-orange-100 shadow-orange-500/30 dark:border-orange-400 dark:bg-orange-500/20 dark:shadow" />
             </div>
             <p class="font-sans text-base text-squirrel-700 dark:text-squirrel-400">
               {project.data.description}
             </p>
-          </li>
-        ))
-      }
-      {
-        feed.map((post) => (
-          <li class="flex flex-col gap-1 py-4">
-            {post.type === "thoughts" && (
-              <Fragment>
-                <div class="flex items-center gap-2 ">
-                  <a
-                    href={`/thoughts/${post.slug}`}
-                    class="relative font-sans text-xl font-bold text-squirrel-800 hover:text-sea-800 hover:underline dark:text-squirrel-300 dark:hover:text-sea-200"
-                  >
-                    {post.data.title}
-                    <div class="ftw-background absolute top-1.5 h-4 w-4 bg-squirrel-50 dark:bg-squirrel-950" />
-                    <div class="ftw-dot absolute top-1.5 h-4 w-4 rounded-full border-2 border-sky-600/20 bg-sky-100 bg-blend-exclusion shadow-sky-500/30 dark:border-sky-400 dark:bg-sky-500/25 dark:shadow" />
-                  </a>
-                </div>
-                <p class="font-sans text-base text-squirrel-700 dark:text-squirrel-400">
-                  {post.data.blurb}
-                </p>
-              </Fragment>
-            )}
-            {post.type === "snippet" && (
-              <Fragment>
-                <div class="flex items-center gap-2 ">
-                  <a
-                    href={`/snippets/${post.slug}`}
-                    class="relative font-sans text-xl font-bold text-squirrel-800 hover:text-sea-800 hover:underline dark:text-squirrel-300 dark:hover:text-sea-200"
-                  >
-                    {post.data.title}
-                    <div class="ftw-background absolute top-1.5 h-4 w-4 bg-squirrel-50 dark:bg-squirrel-950" />
-                    <div class="ftw-dot absolute top-1.5 h-4 w-4 rounded-full border-2 border-rose-600/20 bg-rose-100 bg-blend-exclusion shadow-rose-500/30 dark:border-rose-400 dark:bg-rose-500/25 dark:shadow" />
-                  </a>
-                </div>
-                <p class="font-sans text-base text-squirrel-700 dark:text-squirrel-400">
-                  {post.data.blurb}
-                </p>
-              </Fragment>
-            )}
+            <div class="flex flex-col gap-1 text-squirrel-800 md:flex-row md:items-center md:gap-4 dark:text-sea-100">
+              <span class="inline-flex items-center gap-1.5">
+                <Link />
+                <a
+                  href="https://crowdq.fm"
+                  class="hover:text-sea-700 hover:underline dark:hover:text-sea-200"
+                >
+                  crowdq.fm
+                </a>
+              </span>
+              <span class="inline-flex items-center gap-1.5">
+                <GitHub />
+                <a
+                  href="https://github.com/fostertheweb/crowdq.fm"
+                  class="hover:text-sea-700 hover:underline dark:hover:text-sea-200"
+                >
+                  Repository
+                </a>
+              </span>
+            </div>
           </li>
         ))
       }
