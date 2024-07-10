@@ -4,7 +4,9 @@ export interface Props {
 }
 
 import "@fontsource/archivo";
-import ExternalLink from "../components/ExternalLink.astro";
+import GitHub from "../components/icons/GitHub.astro";
+import LinkedIn from "../components/icons/LinkedIn.astro";
+import Twitter from "../components/icons/Twitter.astro";
 
 const { title } = Astro.props;
 ---
@@ -45,25 +47,22 @@ const { title } = Astro.props;
           <a
             href="https://github.com/fostertheweb"
             class="hover:text-sea-700 hover:underline dark:hover:text-sea-200"
-            >GitHub</a
+            ><GitHub /></a
           >
-          <ExternalLink />
-        </li>
-        <li class="flex items-center gap-1">
-          <a
-            href="https://twitter.com/fostertheweb"
-            class="hover:text-sea-700 hover:underline dark:hover:text-sea-200"
-            >Twitter</a
-          >
-          <ExternalLink />
-        </li>
-        <li class="flex items-center gap-1">
-          <a
-            href="https://linkedin.com/in/fostertheweb"
-            class="hover:text-sea-700 hover:underline dark:hover:text-sea-200"
-            >LinkedIn</a
-          >
-          <ExternalLink />
+          <li class="flex items-center gap-1">
+            <a
+              href="https://twitter.com/fostertheweb"
+              class="hover:text-sea-700 hover:underline dark:hover:text-sea-200"
+              ><Twitter /></a
+            >
+          </li>
+          <li class="flex items-center gap-1">
+            <a
+              href="https://linkedin.com/in/fostertheweb"
+              class="hover:text-sea-700 hover:underline dark:hover:text-sea-200"
+              ><LinkedIn /></a
+            >
+          </li>
         </li>
       </ul>
     </header>

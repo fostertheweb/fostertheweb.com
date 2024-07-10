@@ -17,11 +17,6 @@ const projects = await getCollection("projects");
         projects.map((project) => (
           <li class="flex flex-col gap-1 py-4">
             <div class="relative flex items-center gap-2 ">
-              <img
-                src={project.data.logo}
-                style={{ height: "24px", margin: "5px 0" }}
-                alt={project.data.name}
-              />
               <div class="ftw-background absolute h-4 w-4 bg-squirrel-50 dark:bg-squirrel-950" />
               <div class="ftw-dot absolute h-4 w-4 rounded-full border-2 border-orange-600/25 bg-orange-100 shadow-orange-500/30 dark:border-orange-400 dark:bg-orange-500/20 dark:shadow" />
             </div>
