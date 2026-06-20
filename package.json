@@ -16,7 +16,7 @@
     "@astrojs/tailwind": "^6.0.2",
     "@fontsource/archivo": "^5.0.17",
     "@fontsource/inter": "^5.0.17",
-    "astro": "^6.2.1",
+    "astro": "^6.4.6",
     "dayjs": "^1.11.10",
     "marked": "^12.0.1",
     "marked-highlight": "^2.1.1",
